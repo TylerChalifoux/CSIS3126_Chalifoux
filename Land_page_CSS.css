@@ -1,0 +1,23 @@
+#loginBox{
+	background-color: white;
+	margin-left: 700px;
+	margin-right: 700px;
+	box-shadow: 12px 12px rgba(0,0,0,0.3);
+	text-align: center;
+	
+}
+
+
+body{
+	background: url(LandingPagePhoto.jpg);
+	background-size: cover;
+	
+}
+
+h1{
+		color: white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 5em;
+}
+
