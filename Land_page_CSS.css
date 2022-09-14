@@ -1,7 +1,7 @@
 #loginBox{
 	background-color: white;
-	margin-left: 700px;
-	margin-right: 700px;
+	margin-left: 37em;
+	margin-right: 37em;
 	box-shadow: 12px 12px rgba(0,0,0,0.3);
 	text-align: center;
 	
@@ -15,9 +15,16 @@ body{
 }
 
 h1{
-		color: white;
-		text-align: center;
-		font-weight: bold;
-		font-size: 5em;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 5em;
+}
+
+h2{
+	color: rgb(200,0,0);
+	font-family: Bradley Hand, cursive;
+	font-size: 2em;
+	text-decoration: underline black 0.1em;
 }
 
