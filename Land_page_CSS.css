@@ -7,6 +7,12 @@
 	
 }
 
+.noMarginBottom{
+	margin-bottom: 2px;
+}
+.noMarginTop{
+	margin-top: 2px;
+}
 
 body{
 	background: url(LandingPagePhoto.jpg);
