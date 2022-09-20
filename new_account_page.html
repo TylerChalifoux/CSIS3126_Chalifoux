@@ -2,15 +2,28 @@
 <html>
 	<head>
 		<title> Create An Account </title>
-		<link rel="stylesheet" href="new_account_page_CSS.css">
+		<link rel="stylesheet" href="new_account_styling.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="new_account.js"></script>
 	</head>
 
     <body>
-        <h1>Your search For a New Running Route Ends Here</h2>
-        <div>
+        <div id = logo><a href = landing_page.html><img src = "Logo.PNG"></a></div>
+		<div id = topMargin>Find a Loop</div>
+        <h1>Your search for a new running route ends here</h2>
+        <div id = newAccountBox>
+            <br><br>
+            <p id = usernameText>Enter a New Username Below</p>
+            <input type = “text” id = usernameBox>
             <br><br><br>
-            <p class = usernamePasswordText>Enter a New Username Below</p>
-            <p class = usernamePasswordBox><input type = “text”></P>
+            <p class = passwordText>Enter a New Password Below</p>
+            <input type = “text” id = topPasswordBox class = passwordBox>
+            <p class = passwordText>Confirm Password Below</p>
+            <input type = “text” id = bottomPasswordBox class = passwordBox>
+            <p id = errorMessage></p>
+            <br><br><br>
+            <button id =signUpButton type="button">Sign Up</button>
+            <br><br>
 
         </div>
     </body>
