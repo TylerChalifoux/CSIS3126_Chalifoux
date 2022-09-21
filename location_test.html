@@ -6,7 +6,42 @@
             $(document).ready(function(){
             });
         </script>
+        <style>
+            #timerBox{
+                background-color:rgb(0, 162, 255);
+                color: white;
+                text-align: center;
+                margin-left: 37em;
+	            margin-right: 37em;
+                margin-top: 15em;
+            }
+            #startButton{
+                float: left;
+                margin-left: 2em;
+            }
+            #stopButton{
+
+            }
+            #resetButton{
+                float: right;
+                margin-right: 2em;
+            }
+
+        </style>
     </head>
     <body>
+        <div id = timerBox>
+            <br><p>Timer</p><br>
+            <div>
+                <p>00</p>
+                <p>00</p>
+                <p>00</p>
+            </div>
+            <button id = startButton type="button">Start</button>
+            <button id = stopButton type="button">Stop</button>
+            <button id = resetButton type="button">Reset</button>
+            <br><br>
+
+        </div>
     </body>
 </html>
