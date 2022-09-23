@@ -2,6 +2,7 @@
 
 
 CURRENT BUILD INFORMATION-------------
+- Online URL is: https://tylerchalifoux.github.io/CSIS3126_Chalifoux/
 - Two web pages: a landing page and a create an account page
 - The landing page is simple. asks for username/ password or allows to make an account
 - If you click on "create an account" you are brought to the create an account page
