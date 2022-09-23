@@ -2,24 +2,25 @@
 <html>
 	<head>
 		<title> Create An Account </title>
-		<link rel="stylesheet" href="new_account_styling.css">
+		<link rel="stylesheet" href="mainStyling.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="new_account.js"></script>
 	</head>
 
     <body>
-        <div id = logo><a href = landing_page.html><img src = "Logo.PNG"></a></div>
+        <div id = logo><a href = landing_page.html><img src = "Icons/Logo.PNG"></a></div>
 		<div id = topMargin>Find a Loop</div>
-        <h1>Your search for a new running route ends here</h2>
-        <div id = newAccountBox>
+        <h1 id = newAccountPageHookText>Your search for a new running route ends here</h1>
+        <div id = userInputAreaCenterBox>
             <br>
-            <p id = usernameText>Enter a New Username Below</p>
-            <input type = “text” id = usernameBox>
-            <br>
-            <p class = passwordText>Enter a New Password Below</p>
-            <input type = “text” id = topPasswordBox class = passwordBox>
-            <p class = passwordText>Confirm Password Below</p>
-            <input type = “text” id = bottomPasswordBox class = passwordBox>
+            <p style = "margin-top: 0.3em; margin-bottom: 0.2em;">Enter a New Username Below</p>
+            <input type = “text” style = "margin-top: 0.2em;">
+            <br><br>
+            <p style = "margin-bottom: 0.3em;">Enter a New Password Below</p>
+            <input type = “text” id = topPasswordBox style = "margin-top: 0.1em; margin-bottom: 0.1em;">
+            <p style = "margin-top: 0.2em; margin-bottom: 0.2em;">Confirm Password Below</p>
+            <input type = “text” id = bottomPasswordBox style = "margin-top: 0.1em; margin-bottom: 0.1em;">
             <p id = errorMessageTop style = "font-size: small;">- Password must be 8 characters</p>
             <p id = errorMessageBottom style = "font-size: small;">- Both passwords must match </p>
             <br>

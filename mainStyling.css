@@ -1,0 +1,47 @@
+body{
+    margin-top: 0em;
+    background: url(Icons/landingNewAccountBackground.jpg);
+    background-size: cover;
+}
+
+#newAccountPageHookText{
+    text-align: center;
+    margin-top: 1.7em;
+    font-size: 3em;
+}
+
+#userInputAreaCenterBox{
+	background-color: lightblue;
+	margin-left: 33em;
+	margin-right: 33em;
+	box-shadow: 12px 12px rgba(0,0,0,0.3);
+	text-align: center;
+	font-size: 1.3em;
+}
+
+#logo{
+	height: 7em;
+	position: absolute;
+	left: 0em;
+	margin-right: 0em;
+}
+
+#topMargin{
+	color: rgb(229, 255, 0);
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 2px 2px 5px black;
+	font-size: 5em;
+	background-color: lightblue;
+	height: 1.7em;
+	box-shadow: 12px 12px rgba(0,0,0,0.3)
+
+}
+
+#loginText{
+	color: rgb(229, 255, 0);
+	text-shadow: 2px 2px 5px black;
+	font-family: Bradley Hand, cursive;
+	font-size: 2em;
+	text-decoration: underline black 0.1em;
+}
