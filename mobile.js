@@ -60,7 +60,9 @@ $(document).ready(function(){
 
     document.getElementById('stopButton').addEventListener('click', ()=>{
         $('#timerBox').css("background-color","red");
-        $('#logButton').css("display", "inline-block");
+        if(currentMil != 0 && currentSec != 0){
+            $('#logButton').css("display", "inline-block");
+        }
         killed = true;
         });
 

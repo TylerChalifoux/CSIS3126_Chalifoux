@@ -1,22 +1,62 @@
-body{
-    margin-top: 0em;
-    background: url(Icons/landingNewAccountBackground.jpg);
-    background-size: cover;
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+	body{
+		margin-top: 0em;
+		background: url(Icons/landingNewAccountBackground.jpg);
+		background-size: auto;
+	}
+	#userInputAreaCenterBox{
+		background-color: lightblue;
+		margin-left: 1em;
+		margin-right: 1em;
+		box-shadow: 12px 12px rgba(0,0,0,0.3);
+		text-align: center;
+		font-size: 4em;
+	}
+
+	.mobileStyleBox{
+		height: 100px !important;
+		font-size: 1em !important;
+	}
+	.mobileButton{
+		padding: 35px 32px;
+		font-size: 1.5em;
+	}
+	#errorMessageTop{
+		font-size: 1em !important;
+	}
+	#errorMessageBottom{
+		font-size: 1em !important;
+	}
 }
 
-#newAccountPageHookText{
-    text-align: center;
-    margin-top: 1.7em;
-    font-size: 3em;
-}
+@media only screen and (min-device-width : 640px){
+	body{
+		margin-top: 0em;
+		background: url(Icons/landingNewAccountBackground.jpg);
+		background-size: cover;
+	}
 
-#userInputAreaCenterBox{
-	background-color: lightblue;
-	margin-left: 20em;
-	margin-right: 20em;
-	box-shadow: 12px 12px rgba(0,0,0,0.3);
-	text-align: center;
-	font-size: 1.3em;
+	#newAccountPageHookText{
+		text-align: center;
+		margin-top: 1.7em;
+		font-size: 3em;
+	}
+
+	#userInputAreaCenterBox{
+		background-color: lightblue;
+		margin-left: 20em;
+		margin-right: 20em;
+		box-shadow: 12px 12px rgba(0,0,0,0.3);
+		text-align: center;
+		font-size: 1.3em;
+	}
+}
+#loginText{
+	color: rgb(229, 255, 0);
+	text-shadow: 2px 2px 5px black;
+	font-family: Bradley Hand, cursive;
+	font-size: 2em;
+	text-decoration: underline black 0.1em;
 }
 
 #logo{
@@ -34,14 +74,5 @@ body{
 	font-size: 5em;
 	background-color: lightblue;
 	height: 1.7em;
-	box-shadow: 12px 12px rgba(0,0,0,0.3)
-
-}
-
-#loginText{
-	color: rgb(229, 255, 0);
-	text-shadow: 2px 2px 5px black;
-	font-family: Bradley Hand, cursive;
-	font-size: 2em;
-	text-decoration: underline black 0.1em;
+	box-shadow: 12px 12px rgba(0,0,0,0.3)	
 }
