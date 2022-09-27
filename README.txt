@@ -3,15 +3,33 @@
 
 CURRENT BUILD INFORMATION-------------
 - Online URL is: https://tylerchalifoux.github.io/CSIS3126_Chalifoux/
-- Two web pages: a landing page and a create an account page
-- The landing page is simple. asks for username/ password or allows to make an account
-- If you click on "create an account" you are brought to the create an account page
-- the create an account page asks for a username and two passwords (one to verify)
-- The passwod verifacation works. Password must be 8 or more digits and must match
+- Multiple webpages are now operational and UI has been completed for desktop and mobile. These include:
+	-A login page
+		-This page works for both desktop and phone
+		-Login functionality is not operating yet
+		-Clicking the logo relaunches the page
+		-Clicking the sign in button launches the home screen
+		-Clicking the create an account link launches the create an account page
+	-Create an account paage
+		-This page works for both desktop and phone
+		-Creating an account is NOT functioning yet
+		-passwords must be over 8 characters and match. This is functioning
+		-Clicking the logo relaunches the login page
+	-A home account
+		-Only optimized for desktop
+		-Very plain, only to connect the stopwatch for now
+		-Clicking the logo relaunches the login page
+		-Has a link to the stopwatch
+	-Stopwatch
+		-Optimized for phone however does work and look good on desktop
+		-Allows the user to start an accurate stopwatch. Once the timer is stopped the user can log it, reset, or resume
+		-The log it option is only available when stopped
+		-logging only pushes an alert
+-With the above websites in there current form, the entire web app can be manuvered using one only one page to start
 
 
-Next build goals------
-- We need to build the home page soon, create the home page
-- One the home page, begin working on getting data from the gps on the phone to google maps API
-- Take that information and put it into the webpage
-- A new HTML file was created (location_test.html) to test the way that location gathering will work
+TO DO -------------
+-Create an account with a database
+-Begin to log location from safari and save locally in web browser for now
+
+		
