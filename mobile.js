@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     timerInfo = function(){
         if(!killed){
             currentMil = Date.now() - startTime;

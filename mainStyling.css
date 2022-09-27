@@ -51,6 +51,11 @@
 		font-size: 1.3em;
 	}
 }
+
+#stopwatchLinkHome{
+	border:0.3em solid green;
+	float: right;
+}
 #loginText{
 	color: rgb(229, 255, 0);
 	text-shadow: 2px 2px 5px black;
