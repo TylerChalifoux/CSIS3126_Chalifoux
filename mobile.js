@@ -54,20 +54,17 @@ $(document).ready(function(){
         $('#timerBox').css("background-color","green");
         setInterval(function() {
             timerInfo();
-
-                                function success(pos) {
-                                    const crd = pos.coords;
-                                
-                                    console.log('Your current position is:');
-                                    console.log(`Latitude : ${crd.latitude}`);
-                                    console.log(`Longitude: ${crd.longitude}`);
-                                    console.log(`More or less ${crd.accuracy} meters.`);
-                                }
-                                
-                                navigator.geolocation.getCurrentPosition(success);
-
-
         }, 1);
+        setInterval(function() {
+        function success(pos) {
+            const crd = pos.coords;
+            console.log('Your current position is:');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`More or less ${crd.accuracy} meters.`);
+        }
+            navigator.geolocation.getCurrentPosition(success);
+         }, 1000);
     });
 
     document.getElementById('stopButton').addEventListener('click', ()=>{
