@@ -55,16 +55,15 @@ $(document).ready(function(){
         setInterval(function() {
             timerInfo();
         }, 1);
-        setInterval(function() {
-        function success(pos) {
-            const crd = pos.coords;
-            console.log('Your current position is:');
-            console.log(`Latitude : ${crd.latitude}`);
-            console.log(`Longitude: ${crd.longitude}`);
-            console.log(`More or less ${crd.accuracy} meters.`);
-        }
-            navigator.geolocation.getCurrentPosition(success);
-         }, 1000);
+            setInterval(function() {
+            if(!killed){
+                function success(pos) {
+                    console.log(`Latitude : ${pos.coords.latitude}`);
+                    console.log(`Longitude: ${pos.coords.longitude}`);
+                }
+                navigator.geolocation.getCurrentPosition(success);
+            }
+            }, 5000);
     });
 
     document.getElementById('stopButton').addEventListener('click', ()=>{
