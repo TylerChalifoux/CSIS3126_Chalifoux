@@ -1,7 +1,47 @@
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDeCn0PoRZnjOhnZE5KpP626NLM1-biiPU",
+  authDomain: "project-b3568.firebaseapp.com",
+  projectId: "project-b3568",
+  storageBucket: "project-b3568.appspot.com",
+  messagingSenderId: "40476047310",
+  appId: "1:40476047310:web:0cc776c35f6d6b8f745d9f",
+  measurementId: "G-KTLMTQSPGR"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    
+    const user = userCredential.user;
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    
+  });
+
+
 $(document).ready(function(){
     $('#signUpButton').click(function(){
         var topPassword = $('#topPasswordBox').val();
         var bottomPassword = $('#bottomPasswordBox').val();
+        var newUsername = $('#newUsername').val();
         $('.passwordBox').css("border-color", "black");
         $('#errorMessageTop').css("color", "black");
         $('#errorMessageBottom').css("color", "black");
@@ -20,6 +60,9 @@ $(document).ready(function(){
         
         //ONCE THE PASSWORD HAS BEEN VERIFIED TO BE GOOD
         if(goodPassword){
+            firebase.auth().createUserWithEmailAndPassword(newUsername,bottomPassword);
+            console.log(newUsername)
+            console.log(bottomPassword)
         }
     });
 });
