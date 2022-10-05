@@ -22,7 +22,7 @@ const analytics = getAnalytics(app);
 
 
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 
 const auth = getAuth();
 createUserWithEmailAndPassword(auth, email, password)
