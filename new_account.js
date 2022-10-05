@@ -17,18 +17,18 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+import { getAuth } from 'firebase/auth';
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 
 
 
 
 
-const auth = getAuth(app);
+const auth = getAuth(firebaseApp);
 
 
 $(document).ready(function(){
