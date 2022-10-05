@@ -30,6 +30,8 @@ import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebase
 
 const auth = getAuth(firebaseApp);
 
+//everyting below this line is my code. Everyting above is for firebase------
+
 
 $(document).ready(function(){
     $('#signUpButton').click(function(){
@@ -54,7 +56,7 @@ $(document).ready(function(){
         
         //ONCE THE PASSWORD HAS BEEN VERIFIED TO BE GOOD
         if(goodPassword){
-          createUserWithEmailAndPassword(auth,newUsername,bottomPassword);
+          createUserWithEmailAndPassword(auth,newUsername,bottomPassword);//this is the line to create a new account
           console.log(newUsername);
           console.log(bottomPassword);
         }
