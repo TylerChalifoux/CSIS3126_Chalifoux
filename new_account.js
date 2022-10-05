@@ -24,6 +24,13 @@ const analytics = getAnalytics(app);
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 
+
+
+
+
+const auth = getAuth(firebaseApp);
+
+
 $(document).ready(function(){
     $('#signUpButton').click(function(){
         var topPassword = $('#topPasswordBox').val();
@@ -47,8 +54,9 @@ $(document).ready(function(){
         
         //ONCE THE PASSWORD HAS BEEN VERIFIED TO BE GOOD
         if(goodPassword){
-            console.log(newUsername)
-            console.log(bottomPassword)
+          createUserWithEmailAndPassword(auth,newUsername,bottomPassword);
+          console.log(newUsername);
+          console.log(bottomPassword);
         }
     });
 });
