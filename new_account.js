@@ -57,7 +57,6 @@ $(document).ready(function(){
         
         //ONCE THE PASSWORD HAS BEEN VERIFIED TO BE GOOD
         if(goodPassword){
-            firebase.auth().createUserWithEmailAndPassword(newUsername,bottomPassword);
             console.log(newUsername)
             console.log(bottomPassword)
         }
