@@ -28,7 +28,7 @@ import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebase
 
 
 
-const auth = getAuth(firebaseApp);
+const auth = getAuth(app);
 
 
 $(document).ready(function(){
