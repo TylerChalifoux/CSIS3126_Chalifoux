@@ -25,11 +25,6 @@ CURRENT BUILD INFORMATION-------------
 		-Allows the user to start an accurate stopwatch. Once the timer is stopped the user can log it, reset, or resume
 		-The log it option is only available when stopped
 		-logging only pushes an alert
+		-The stopwatch DOES calculate the accurate position of the phone in Long and Lat every 5 sec.
+		-At the moment, this information is NOT being sent anywhere
 -With the above websites in there current form, the entire web app can be manuvered using one only one page to start
-
-
-TO DO -------------
--Create an account with a database
--Begin to log location from safari and save locally in web browser for now
-
-		
