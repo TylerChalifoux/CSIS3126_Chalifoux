@@ -1,4 +1,11 @@
 $(document).ready(function(){
+
+    const form = document.getElementById('newAccountForm')
+
+    form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    });
+    
     $('#signUpButton').click(function(){
         var topPassword = $('#topPasswordBox').val();
         var bottomPassword = $('#bottomPasswordBox').val();
@@ -21,8 +28,10 @@ $(document).ready(function(){
         
         //ONCE THE PASSWORD HAS BEEN VERIFIED TO BE GOOD
         if(goodPassword){
-          console.log(newUsername);
-          console.log(bottomPassword);
+            $('#newAccountForm').submit();
+            alert("Account Created! Being routed to login screen");
+            window.location.href = "index.html";
+            
         }
     });
 });

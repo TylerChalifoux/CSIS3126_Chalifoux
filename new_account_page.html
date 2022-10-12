@@ -14,18 +14,20 @@
         <h1 id = newAccountPageHookText>Your search for a new running route ends here</h1>
         <div id = userInputAreaCenterBox>
             <br>
-            <p style = "margin-top: 0.3em; margin-bottom: 0.2em;">Enter a New Username Below</p>
-            <input type = "text" placeholder="Enter New Username" class = mobileStyleBox id = newUsername style = "margin-top: 0.2em;">
-            <br><br>
-            <p style = "margin-bottom: 0.3em;">Enter a New Password Below</p>
-            <input type = "password" placeholder="Enter New Password" class = mobileStyleBox id = topPasswordBox style = "margin-top: 0.1em; margin-bottom: 0.1em;">
-            <p style = "margin-top: 0.2em; margin-bottom: 0.2em;">Confirm Password Below</p>
-            <input type = "password" placeholder="Re-enter New Password" class = mobileStyleBox id = bottomPasswordBox style = "margin-top: 0.1em; margin-bottom: 0.1em;">
-            <p id = errorMessageTop style = "font-size: small;">- Password must be 8 characters</p>
-            <p id = errorMessageBottom style = "font-size: small;">- Both passwords must match </p>
-            <br>
-            <button class = mobileButton id =signUpButton type="button">Sign Up</button>
-            <br><br>
+            <form id = newAccountForm>
+                <p style = "margin-top: 0.3em; margin-bottom: 0.2em;">Enter a New Username Below</p>
+                <input type = "text" placeholder="Enter New Username" class = mobileStyleBox id = newUsername style = "margin-top: 0.2em;">
+                <br><br>
+                <p style = "margin-bottom: 0.3em;">Enter a New Password Below</p>
+                <input type = "password" placeholder="Enter New Password" class = mobileStyleBox id = topPasswordBox style = "margin-top: 0.1em; margin-bottom: 0.1em;">
+                <p style = "margin-top: 0.2em; margin-bottom: 0.2em;">Confirm Password Below</p>
+                <input type = "password" placeholder="Re-enter New Password" class = mobileStyleBox id = bottomPasswordBox style = "margin-top: 0.1em; margin-bottom: 0.1em;">
+                <p id = errorMessageTop style = "font-size: small;">- Password must be 8 characters</p>
+                <p id = errorMessageBottom style = "font-size: small;">- Both passwords must match </p>
+                <br>
+                <button class = mobileButton id =signUpButton type="submit">Sign Up</button>
+                <br><br>
+            </form>
 
         </div>
     </body>
