@@ -1,38 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDeCn0PoRZnjOhnZE5KpP626NLM1-biiPU",
-  authDomain: "project-b3568.firebaseapp.com",
-  projectId: "project-b3568",
-  storageBucket: "project-b3568.appspot.com",
-  messagingSenderId: "40476047310",
-  appId: "1:40476047310:web:0cc776c35f6d6b8f745d9f",
-  measurementId: "G-KTLMTQSPGR"
-};
-
-// Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-const analytics = getAnalytics(firebaseApp);
-
-
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-
-
-
-
-
-const auth = getAuth(firebaseApp);
-
-//everyting below this line is my code. Everyting above is for firebase------
-
-
 $(document).ready(function(){
     $('#signUpButton').click(function(){
         var topPassword = $('#topPasswordBox').val();
@@ -56,7 +21,6 @@ $(document).ready(function(){
         
         //ONCE THE PASSWORD HAS BEEN VERIFIED TO BE GOOD
         if(goodPassword){
-          createUserWithEmailAndPassword(auth,newUsername,bottomPassword);//this is the line to create a new account
           console.log(newUsername);
           console.log(bottomPassword);
         }
