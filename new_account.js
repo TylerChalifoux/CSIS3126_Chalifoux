@@ -6,7 +6,6 @@ new_account_processing for username authentication and another round of password
 */
 
 $(document).ready(function(){
-
     const form = document.getElementById('newAccountForm')
 
     //Stops the form from submitting when you click submit. The form must be submitted manually now. This is only done at end when the password is good.
@@ -16,13 +15,12 @@ $(document).ready(function(){
     
     //assigns all the variables equal to the user input, defaults the error messages to black, and assigns the good password variable to true
     $('#signUpButton').click(function(){
-        var topPassword = $('#topPasswordBox').val();
-        var bottomPassword = $('#bottomPasswordBox').val();
+        var topPassword = $('#topPassInput').val();
+        var bottomPassword = $('#bottomPassInput').val();
         var username = $('#newUsername').val();
-        console.log(username);
         $('#usernameErrorMessage').css("color", "black");
-        $('#errorMessageTop').css("color", "black");
-        $('#errorMessageBottom').css("color", "black");
+        $('#passCharErrorMessage').css("color", "black");
+        $('#passMatchErrorMessage').css("color", "black");
         var goodPasswordandUsername = true;
 
        //checks if username is less than 5 charcters, turns the error message text red if false
@@ -32,13 +30,13 @@ $(document).ready(function(){
         }
         
         //checks if the top and bottom password are less than 7 charcters, turns the error message text red if false
-        if(topPassword.length<7 || bottomPassword.length<7){
-            $('#errorMessageTop').css("color", "red");
+        if(topPassword.length<5 || bottomPassword.length<5){
+            $('#passCharErrorMessage').css("color", "red");
             goodPasswordandUsername = false;
         }
         //checks if the top and bottom password dont match, turns the error message text red if false
         if(topPassword != bottomPassword){
-            $('#errorMessageBottom').css("color", "red");
+            $('#passMatchErrorMessage').css("color", "red");
             goodPasswordandUsername = false;
         }
         
