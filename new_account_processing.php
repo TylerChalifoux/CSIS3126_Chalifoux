@@ -49,7 +49,8 @@ if($errorMessage != ""){
 	include ("new_account_page.php");
 	die();
 }else{
-	mysqli_query($connection,"INSERT INTO users (username, password) VALUES ('$newUsername','$topPassInput'")or die("Unable to add");
-	echo"Account created with username: ". $newUsername. " and password: ". $topPassInput;
+	mysqli_query($connection,"INSERT INTO users (username, password) VALUES ('$newUsername','$topPassInput')")or die("Unable to add");
+	$loginPageMessage = "Account created, sign in now!";
+	include ("index.php");
 }
 ?>
