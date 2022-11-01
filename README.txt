@@ -1,5 +1,11 @@
 -----------------FIND A LOOP web app------------------
 
+TO-DO LIST------------
+
+1) redo login page desgin
+2) Make redirects work from create an account to login page and login page to home page
+
+
 
 CURRENT BUILD INFORMATION-------------
 - Online URL is: https://tylerchalifoux.github.io/CSIS3126_Chalifoux/

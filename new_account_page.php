@@ -10,7 +10,7 @@
 	</head>           
 
     <body>
-        <div id = logo><a href = index.php><img src = "Icons/Logo.png"></a></div>
+        <div id = logo><a href = index.html><img src = "Icons/Logo.png"></a></div>
 		<div id = topMargin>Find a Loop</div>
         <h1 id = newAccountPageHookText>Your search for a new running route ends here</h1>
         <div id = userInputAreaCenterBox>
