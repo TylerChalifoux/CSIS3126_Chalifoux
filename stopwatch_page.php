@@ -1,14 +1,18 @@
 <?php
 include("global.php");
 ?>
-
 <!DOCTYPE html>
 <html>
 	<head>
         <title>Stopwatch</title>
+
+        <!-- Top source is for Google Map's API, other two are conventional HTML stuff -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="mobile.js"></script>
 
+
+        <!-- Styling for mobile and desktop-->
         <style>
             @media only screen and (min-device-width : 360px) and (max-device-width : 640px)  
             {
@@ -77,5 +81,11 @@ include("global.php");
             <button id = logButton class = buttonStyling type="button">Click to Log</button>
             <br><br>
         </div>
+
+        <!-- Below this is everything for displaying the map in HTML -->
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD9NnV8F9xGod5y443nhdSWb-gIFNqphw&callback=initMap&v=weekly"
+        defer
+        ></script>
     </body>
 </html>

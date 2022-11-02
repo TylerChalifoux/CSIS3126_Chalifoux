@@ -1,3 +1,10 @@
+<!--This is the page for creating a new account. First, the users fill out a form for a username, a password, and verify password.
+Once completed, the form is forced to not submit unless manually submitted. The JS file then does local authentication of the entered information.
+The password is then verified to be matching and enough characters. The username is also checked to make sure it's long enough. If not, the 
+form is not submitted but the text color changes for the error messages. If all is good, the form is then submitted and sent to the 
+new_account_processing for username authentication and another round of password authentication. If good, the user account is created and
+the user is brought back to the login page.!-->
+
 <!DOCTYPE html>
 <html>
 	<head>

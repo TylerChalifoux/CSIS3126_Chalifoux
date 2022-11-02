@@ -1,10 +1,3 @@
-/* This page is a local authentication of the entered password. The way it works is by first stopping the form
-from subbmitting allowing the form to now only submit when told to. The password is then verified to be matching
-and enough characters. The username is also checked to make sure it's long enough. If not, the form is not submitted 
-but the text color changes for the error messages. If all is good, the form is then submitted and sent to the 
-new_account_processing for username authentication and another round of password authentication. If good, the user account is created
-*/
-
 $(document).ready(function(){
     const form = document.getElementById('newAccountForm')
 

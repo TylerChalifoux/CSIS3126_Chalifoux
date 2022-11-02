@@ -51,6 +51,6 @@ if($errorMessage != ""){
 }else{
 	mysqli_query($connection,"INSERT INTO users (username, password) VALUES ('$newUsername','$topPassInput')")or die("Unable to add");
 	$loginPageMessage = "Account created, sign in now!";
-	include ("index.html");
+	include ("login_page.php");
 }
 ?>
