@@ -1,9 +1,8 @@
 @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
 	body{
 		margin-top: 0em;
-		background: url(Icons/landingNewAccountBackground.jpg);
-		background-size: auto;
 	}
+
 	#userInputAreaCenterBox{
 		background-color: lightblue;
 		margin-left: 1em;

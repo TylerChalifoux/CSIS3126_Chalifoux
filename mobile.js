@@ -1,38 +1,20 @@
 $(document).ready(function(){
 
-    //----------------This is all for the creation of the map--------------------------------
+    //----------------This for the creation of the map--------------------------------
 
     //here we center the map around those coordinates provided with the correct zoom
     var mapProp= {
         center:new google.maps.LatLng(41.824459,-71.412750),
         zoom:10,
       };
-      //creates the new map and puts it into the div with that ID
-      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
       
       //This portion are the coordinates for the red line
-      const flightPlanCoordinates = [
-          { lat: 41.824459, lng: -71.412750 },
-          { lat: 21.291, lng: -157.821 },
-          { lat: -18.142, lng: 178.431 },
-          { lat: -27.467, lng: 153.027 },
-         ];
-
-    //Creates the red line on our orginal map using the coordinates above
-      var flightPath = new google.maps.Polyline({
-        path:flightPlanCoordinates,
-        strokeColor:"#0000FF",
-        strokeOpacity:0.8,
-        strokeWeight:2
-      });
-
-      //creates map
-      flightPath.setMap(map);
-
+      const flightPlanCoordinates = [];
 
 //----------------This is all for the creation of the timer and getting location---------------
 
     //This function is for the display of the timer
+    killed = false;
     timerInfo = function(){
         //Killed is true if the timer is stopped
         if(!killed){
@@ -110,11 +92,20 @@ $(document).ready(function(){
             setInterval(function() {
             if(!killed){
                 //as long as timer is running, log location
-                function success(pos) {
+                function success() {
+                    console.log("hello1");
                     console.log(`Latitude : ${pos.coords.latitude}`);
                     console.log(`Longitude: ${pos.coords.longitude}`);
+                    flightPlanCoordinates.push({lat:41.825226, lng:-71.418884});
+                    flightPlanCoordinates.push({lat:42.999577, lng:-107.55152});
+                    flightPlanCoordinates.push({lat:19.8968, lng:155.5828});
+                    console.log("hello2");
                 }
-                navigator.geolocation.getCurrentPosition(success);
+
+                function failure() {
+                    console.log("Location failed");
+                }
+                window.navigator.geolocation.getCurrentPosition(success, failure);//-------------------------------------------------------------CURRENT ERROR, never going into the success
             }
             }, 5000);
     });
@@ -143,7 +134,7 @@ $(document).ready(function(){
         }
     });
 
-    //Does the same thing as reset, but also logs a run giving the use an upadate
+    //Does the same thing as reset, but also logs a run giving the use an upadate. Creates a new map on the bottom of the screen
     document.getElementById('logButton').addEventListener('click', ()=>{
         $('#timerBox').css("background-color","purple");
         $('#timerBox').css("background-color","darkblue");
@@ -154,6 +145,18 @@ $(document).ready(function(){
         killed = false;
         timerInfo();
         killed = true;
-        alert("Run logged");
+
+        //creates the new map and puts it into the div with that ID
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+        //Creates the red line on our orginal map using the coordinates above
+        var flightPath = new google.maps.Polyline({
+            path:flightPlanCoordinates,
+            strokeColor:"#0000FF",
+            strokeOpacity:0.8,
+            strokeWeight:2
+          });
+           //creates map
+        flightPath.setMap(map);
     });
 });

@@ -84,7 +84,7 @@ include("global.php");
 
         <!-- Below this is everything for displaying the map in HTML -->
         <div id="googleMap" style="width:100%;height:400px;"></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD9NnV8F9xGod5y443nhdSWb-gIFNqphw&callback=initMap&v=weekly"
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD9NnV8F9xGod5y443nhdSWb-gIFNqphw"
         defer
         ></script>
     </body>

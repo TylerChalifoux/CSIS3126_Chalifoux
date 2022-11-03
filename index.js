@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    //-------Everything below is for the slideshow on the front page----------
     let slideIndex = 0;
     showSlides();
 
@@ -16,7 +17,7 @@ $(document).ready(function(){
     }    
     
     slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 4000); // Change image every 2 seconds
+    setTimeout(showSlides, 4000);
     }
 
 

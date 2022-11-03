@@ -13,6 +13,13 @@ the user is brought back to the login page.!-->
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="http://tchalifoux.jwuclasses.com/new_account.js"></script>
+
+        <style>
+        body{
+				background: url(Icons/landingNewAccountBackground.jpg);
+				background-size: auto;
+			}
+        </style>
     
 	</head>           
 

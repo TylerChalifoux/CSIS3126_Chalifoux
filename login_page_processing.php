@@ -11,8 +11,9 @@ if ($_POST["enteredPassword"] == ""){
     $loginPageError .= "Password is required<br />";
 }
 
+//If empty, go back to the login page with an updated error message
 if($loginPageError != ""){
-	include ("index.php");
+	include ("login_page.php");
 	die();
 }
 
@@ -22,21 +23,22 @@ $password = mysqli_real_escape_string($connection,$_POST["enteredPassword"]);
 
 
 //Search for account
-
 $res = mysqli_query($connection,"SELECT * FROM users WHERE username = '$username'");
 $row = mysqli_fetch_assoc($res);
 
+//No account found
 if($row ==0){
     $loginPageError .= "Username not found <br />";
-    include ("index.php");
+    include ("login_page.php");
     die();
+//If password is wrong
 }else if($row["password"] != $password){
     $loginPageError .= "Incorrect Password <br />";
-    include ("index.php");
+    include ("login_page.php");
     die();
 }else{
     //$_SESSION["userid"] = $row["id"];
-    header("Location: new_account_page.php");
+    include("home_page.html");
     exit();
 }
 ?>
