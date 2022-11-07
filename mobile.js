@@ -5,11 +5,7 @@ $(document).ready(function(){
      sumLat = 0;
      sumLong = 0;
      numOfCoords = 0;
-
-
      bounds  = new google.maps.LatLngBounds();
-
-
 
     //This function is for the display of the timer
     killed = false;
@@ -35,7 +31,7 @@ $(document).ready(function(){
             }
 
             //If the seconds goes over 60, the minutes are increased and everything else is reset
-            if(currentSec>60){
+            if(currentSec>59){
                 startTime = Date.now();
                 currentMil = 0;
                 currentSec = 0;
@@ -58,14 +54,13 @@ $(document).ready(function(){
             }else{
                 //adds a 0 if minutes are below 10. This prevents the text from moving when going from 9 to 10
                 if(currentMin<10){
-                    $('Min').text('0' + currentMin);
+                    $('#min').text('0' + currentMin);
                 }else{
-                    $('#Min').text(currentMin);
+                    $('#min').text(currentMin);
                 }
             }
         }
     }
-
 
     //Sets the starting time to now and all values to 0
     startTime = Date.now();
@@ -91,26 +86,32 @@ $(document).ready(function(){
             if(!killed){
                 //as long as timer is running, log location
                 function success(position) {
-                    numOfCoords++;
-                    sumLat = sumLat + position.coords.latitude;
-                    sumLong = sumLong + position.coords.longitude;
-                    runPath.push({lat:position.coords.latitude, lng:position.coords.longitude});
+                    //Increments the amount of coordinates and adds up the total for long and lat. This is used below to center the map in the middle of path
 
+                    if(position.coords.accuracy < 75){
+                        numOfCoords++;
+                        sumLat = sumLat + position.coords.latitude;
+                        sumLong = sumLong + position.coords.longitude;
 
-                    loc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                    bounds.extend(loc); 
+                        //Push the long and lat into the array used to make the path
+                        runPath.push({lat:position.coords.latitude, lng:position.coords.longitude});
 
-
-
-                    console.log("sumLat: " + sumLat);
-                    console.log("sumLong: " + sumLong);
-                    console.log("numOfCoords: " + numOfCoords);
+                        //Adds the coordinates to this varaible used to keep the wholes path inside the map (Auto zooming to the perfect zoom)
+                        loc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        bounds.extend(loc);
+                    }
                 }
 
+                //if location does not work
                 function failure() {
-                    console.log("Location failed");
+                    alert("You must enable location services to use the app");
                 }
-                window.navigator.geolocation.getCurrentPosition(success, failure);
+
+                //Allows the program to use a better location
+                const options = {
+                    enableHighAccuracy: true,
+                }
+                window.navigator.geolocation.getCurrentPosition(success, failure, options);
             }
             }, 5000);
     });
@@ -118,7 +119,7 @@ $(document).ready(function(){
     //Sets killed to true, stopping timer, updating background, and as long as the timer ran for 10 seconds, the run log button is shown
     document.getElementById('stopButton').addEventListener('click', ()=>{
         $('#timerBox').css("background-color","red");
-        if(currentSec > 10){
+        if(currentMin > 0 || currentSec > 10){
             $('#logButton').css("display", "inline-block");
         }
         killed = true;
