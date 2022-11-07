@@ -16,11 +16,28 @@
                 border: 1px solid black;
                 border-collapse: collapse;
             }
+            .topButtons{
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+                padding-right: 1em;
+                padding-left: 1em;
+                font-size: x-large;
+                color: yellow;
+                border-radius: 50%;
+                float: right;
+                background-color:rgb(234, 153, 153)
+
+            }
         </style>
     </head>
     <body>
         <div id = logo><a href = index.html><img src = "Icons/Logo.png"></a></div>
-		<div id = topMargin>Find a Loop</div>
+		<div id = topMargin style = "text-align: right;">Find a Loop
+
+            <button id = "indexPageSignUpButton" class ="topButtons" style=" margin-right: 2em; margin-top: 1.5em;">Sign Up</button>
+            <button id = "indexPageSignInButton" class ="topButtons" style=" margin-left: 15em; margin-right: 2em; margin-top: 1.5em;">Sign In</button>
+
+        </div>
 		<br>
         <h1 style = "text-align: center;">Looking for the perfect running route?</h1>
 

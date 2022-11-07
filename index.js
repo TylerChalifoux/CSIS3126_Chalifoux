@@ -1,5 +1,13 @@
 $(document).ready(function(){
 
+    $('#indexPageSignUpButton').click(function(){
+        window.open("http://tchalifoux.jwuclasses.com/new_account_page.php");
+    });
+
+    $('#indexPageSignInButton').click(function(){
+        window.open("http://tchalifoux.jwuclasses.com/login_page.php");
+    });
+
     //-------Everything below is for the slideshow on the front page----------
     let slideIndex = 0;
     showSlides();

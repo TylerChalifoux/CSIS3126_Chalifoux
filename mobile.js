@@ -1,17 +1,15 @@
 $(document).ready(function(){
+    
+     //This portion are the coordinates for the red line on the map and to center the map correctly
+     const runPath = [];
+     sumLat = 0;
+     sumLong = 0;
+     numOfCoords = 0;
 
-    //----------------This for the creation of the map--------------------------------
 
-    //here we center the map around those coordinates provided with the correct zoom
-    var mapProp= {
-        center:new google.maps.LatLng(41.824459,-71.412750),
-        zoom:10,
-      };
-      
-      //This portion are the coordinates for the red line
-      const flightPlanCoordinates = [];
+     bounds  = new google.maps.LatLngBounds();
 
-//----------------This is all for the creation of the timer and getting location---------------
+
 
     //This function is for the display of the timer
     killed = false;
@@ -92,20 +90,27 @@ $(document).ready(function(){
             setInterval(function() {
             if(!killed){
                 //as long as timer is running, log location
-                function success() {
-                    console.log("hello1");
-                    console.log(`Latitude : ${pos.coords.latitude}`);
-                    console.log(`Longitude: ${pos.coords.longitude}`);
-                    flightPlanCoordinates.push({lat:41.825226, lng:-71.418884});
-                    flightPlanCoordinates.push({lat:42.999577, lng:-107.55152});
-                    flightPlanCoordinates.push({lat:19.8968, lng:155.5828});
-                    console.log("hello2");
+                function success(position) {
+                    numOfCoords++;
+                    sumLat = sumLat + position.coords.latitude;
+                    sumLong = sumLong + position.coords.longitude;
+                    runPath.push({lat:position.coords.latitude, lng:position.coords.longitude});
+
+
+                    loc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                    bounds.extend(loc); 
+
+
+
+                    console.log("sumLat: " + sumLat);
+                    console.log("sumLong: " + sumLong);
+                    console.log("numOfCoords: " + numOfCoords);
                 }
 
                 function failure() {
                     console.log("Location failed");
                 }
-                window.navigator.geolocation.getCurrentPosition(success, failure);//-------------------------------------------------------------CURRENT ERROR, never going into the success
+                window.navigator.geolocation.getCurrentPosition(success, failure);
             }
             }, 5000);
     });
@@ -146,17 +151,24 @@ $(document).ready(function(){
         timerInfo();
         killed = true;
 
+         //here we center the map around those coordinates provided with the correct zoom
+        var mapProp= {
+            center:new google.maps.LatLng(sumLat/numOfCoords, sumLong/numOfCoords),
+            zoom:15,
+        };
+
         //creates the new map and puts it into the div with that ID
         var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
         //Creates the red line on our orginal map using the coordinates above
-        var flightPath = new google.maps.Polyline({
-            path:flightPlanCoordinates,
+        var runLine = new google.maps.Polyline({
+            path:runPath,
             strokeColor:"#0000FF",
             strokeOpacity:0.8,
             strokeWeight:2
           });
            //creates map
-        flightPath.setMap(map);
+           runLine.setMap(map);
+           map.fitBounds(bounds);
     });
 });
