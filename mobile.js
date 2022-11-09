@@ -1,11 +1,27 @@
 $(document).ready(function(){
     
+    //This hideous function is from Google Maps API. This allows you to find the distance between two long and lat points on the globe
+    function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+        var R = 6371; // Radius of the earth in km
+        var dLat = deg2rad(lat2-lat1);  // deg2rad below
+        var dLon = deg2rad(lon2-lon1); 
+        var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon/2) * Math.sin(dLon/2); 
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+        var d = R * c; // Distance in km
+        return d;
+      }
+      
+      function deg2rad(deg) {
+        return deg * (Math.PI/180)
+      }
+    
      //This portion are the coordinates for the red line on the map and to center the map correctly
      const runPath = [];
      sumLat = 0;
      sumLong = 0;
      numOfCoords = 0;
      bounds  = new google.maps.LatLngBounds();
+     totalDistance = 0;
 
     //This function is for the display of the timer
     killed = false;
@@ -67,14 +83,12 @@ $(document).ready(function(){
     currentSec = 0;
     currentMil = 0;
     currentMin = 0;
-    //Hides the log button unless the timer is stopped
-    $('#logButton').css("display", "none");
 
     //Start button has been pressed, killed is now false, allowing the above function to run
     document.getElementById('startButton').addEventListener('click', ()=>{
         killed = false;
-        $('#logButton').css("display", "none");
         $('#timerBox').css("background-color","green");
+        $('#finishButton').css("display","none");
 
         //This function runs at a specified rate. We have set for once every millisecond
         setInterval(function() {
@@ -86,12 +100,21 @@ $(document).ready(function(){
             if(!killed){
                 //as long as timer is running, log location
                 function success(position) {
-                    //Increments the amount of coordinates and adds up the total for long and lat. This is used below to center the map in the middle of path
-
+                    //As long as the location is accurate up to 75 meters
                     if(position.coords.accuracy < 75){
+                        //Increments the amount of coordinates and adds up the total for long and lat. This is used below to center the map in the middle of path
                         numOfCoords++;
                         sumLat = sumLat + position.coords.latitude;
                         sumLong = sumLong + position.coords.longitude;
+
+                        if(numOfCoords>1){
+                            totalDistance = totalDistance + getDistanceFromLatLonInKm(oldLat, oldLong, position.coords.latitude, position.coords.longitude);
+                            oldLat = position.coords.latitude;
+                            oldLong = position.coords.longitude;
+                        }else{
+                            oldLat = position.coords.latitude;
+                            oldLong = position.coords.longitude;
+                        }
 
                         //Push the long and lat into the array used to make the path
                         runPath.push({lat:position.coords.latitude, lng:position.coords.longitude});
@@ -120,7 +143,7 @@ $(document).ready(function(){
     document.getElementById('stopButton').addEventListener('click', ()=>{
         $('#timerBox').css("background-color","red");
         if(currentMin > 0 || currentSec > 10){
-            $('#logButton').css("display", "inline-block");
+            $('#finishButton').css("display", "inline-block");
         }
         killed = true;
         });
@@ -128,7 +151,6 @@ $(document).ready(function(){
     //As long as timer is stopped, resets all values, runs one loop of the display to display all 0s, and sets killed equal to true again
     document.getElementById('resetButton').addEventListener('click', ()=>{
         if(killed){
-            $('#logButton').css("display", "none");
             $('#timerBox').css("background-color","darkblue");
             currentSec = 0;
             currentMil = 0;
@@ -140,10 +162,13 @@ $(document).ready(function(){
         }
     });
 
-    //Does the same thing as reset, but also logs a run giving the use an upadate. Creates a new map on the bottom of the screen
-    document.getElementById('logButton').addEventListener('click', ()=>{
+    //This button sets all values back to 0, gets the total time, shows the map and details, and unlocks two more buttons for the user
+    document.getElementById('finishButton').addEventListener('click', ()=>{
         $('#timerBox').css("background-color","purple");
         $('#timerBox').css("background-color","darkblue");
+
+        //Gets the total time in seconds. This is used farther down to display the total time in plain english
+        totalTime = ((currentMin*60) + (currentSec) +(currentMil/1000)); 
         currentSec = 0;
         currentMil = 0;
         currentMin = 0;
@@ -171,5 +196,60 @@ $(document).ready(function(){
            //creates map
            runLine.setMap(map);
            map.fitBounds(bounds);
+
+           //Displays the two buttons now that the loop is done and details on the run
+           $('#logButton').css("display", "inline-block");
+           $('#restartButton').css("display", "inline-block");
+           $('#divDetailsList').css("display", "inline-block");
+
+           //Finds the pace from the total time and distance
+           if(totalDistance>0){
+                finalPace = (totalTime/totalDistance);
+           }else{
+                finalPace = 0;
+           }
+
+           if(finalPace>100){
+            finalPaceText = "100+";
+           }else{
+            finalPaceText = finalPace.toFixed(3);
+           }
+
+           //Used for the plain english final time
+           finalTimePlainEnglish = "";
+           if(totalTime>59){
+            totalMin = totalTime/60;
+            if(totalMin>=2){
+                finalTimePlainEnglish = Math.trunc(totalMin) + " minutes and ";
+                totalTime = totalTime%60;
+            }else{
+                finalTimePlainEnglish = Math.trunc(totalMin) + " minute and ";
+                totalTime = totalTime%60;
+            }
+           }
+           if(totalTime>=2){
+            finalTimePlainEnglish = finalTimePlainEnglish + Math.trunc(totalTime) + " seconds";
+           }else{
+            finalTimePlainEnglish = finalTimePlainEnglish + Math.trunc(totalTime) + " second";
+           }
+
+           //Sets the details list once the loop is finished
+           $('#finalTimeText').text(finalTimePlainEnglish);
+           $('#finalDistanceText').text(totalDistance.toFixed(3) + " miles");
+           $('#finalPacetext').text(finalPaceText + " minutes/mile");
+    });
+
+    //Logs the users loop, brings that back to the home page
+    document.getElementById('logButton').addEventListener('click', ()=>{
+        alert("Run logged");
+        location.href = 'https://tchalifoux.jwuclasses.com/home_page.php';
+
+    });
+
+    //Deletes the loop and starts over. Asks the user to confirm before deleting
+    document.getElementById('restartButton').addEventListener('click', ()=>{
+        if (confirm("Are you sure? Going forward will delete the loop")) {
+            location.href = 'https://tchalifoux.jwuclasses.com/stopwatch_page.php';
+        }
     });
 });
