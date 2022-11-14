@@ -85,10 +85,10 @@ include("global.php");
         <a id = homeButton href = home_page.html><button class = buttonStyling style="padding: 0.3em;">Home</button></a>
         <br>
         <!-- For the google map after the loop is completed-->
-        <div id="googleMap" style="width:100%;height: 1000px; margin-top: 0.6em;">
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD9NnV8F9xGod5y443nhdSWb-gIFNqphw"
-            defer
-            ></script>
+        <div style="width:100%;height: 1000px; margin-top: 0.6em;">
+            <img id = googleMap style="width:100%; margin-top: 0.6em;">
+            
+            <?php mysqli_query($connection,"INSERT INTO loops (location, distance, map) VALUES ('test2','69','https://maps.googleapis.com/maps/api/js?key=AIzaSyCD9NnV8F9xGod5y443nhdSWb-gIFNqphw')")or die("Unable to add");?>
 
             <!-- This part is used to display the message when you are on a laptop instead of a phone-->
             <div id = boxOnlySeenOnComputers style = " display: none; text-align: center; font-size: 5em">
