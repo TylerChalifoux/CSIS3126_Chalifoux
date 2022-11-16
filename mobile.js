@@ -52,6 +52,8 @@ $(document).ready(function(){
      const runPath = [];
      numOfCoords = 0;
      totalDistance = 0;
+     var town = "";
+     var state = "";
 
     //This function is for the display of the timer
     killed = false;
@@ -131,7 +133,7 @@ $(document).ready(function(){
                 //as long as timer is running, log location
                 function success(position) {
                     //As long as the location is accurate up to 75 meters
-                    if(position.coords.accuracy < 75){
+                    if(position.coords.accuracy < 7500){
                         //Increments the amount of coordinates and adds up the total for long and lat. This is used below to center the map in the middle of path
                         numOfCoords++;
 
@@ -148,6 +150,25 @@ $(document).ready(function(){
                         //Push the long and lat into the array used to make the path
                         runPath.push(position.coords.latitude);
                         runPath.push(position.coords.longitude);
+
+                        //gets the starting city and town
+                        if(numOfCoords == 1){
+                            var getTownAndState = new XMLHttpRequest();
+                            getTownAndState.onreadystatechange = function(){
+
+                                if (this.readyState == 4 && this.status == 200) {
+                                    var JSONdata = (JSON.parse(getTownAndState.responseText));
+                                    town = (JSONdata.results[0].address_components[0].long_name);
+                                    state = (JSONdata.results[0].address_components[2].long_name);
+                                }
+                            }
+                                var geocodeURL = " https://maps.googleapis.com/maps/api/geocode/json?";
+                                var coords = "latlng="+position.coords.latitude+","+position.coords.longitude;
+                                var geoKeyAndType = "&key=AIzaSyCD9NnV8F9xGod5y443nhdSWb-gIFNqphw&result_type=locality";
+
+                                getTownAndState.open("GET", geocodeURL + coords + geoKeyAndType, false);
+                                getTownAndState.send();
+                        }
                     }
                 }
 
@@ -251,10 +272,21 @@ $(document).ready(function(){
     });
 
     //Logs the users loop, brings that back to the home page
-    document.getElementById('logButton').addEventListener('click', ()=>{
-        alert("Run logged");
-        location.href = 'https://tchalifoux.jwuclasses.com/home_page.php';
 
+    document.getElementById('logButton').addEventListener('click', ()=>{
+        var sendToProcessing = new XMLHttpRequest();
+        sendToProcessing.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+
+        sendToProcessing.open("GET", "https://tchalifoux.jwuclasses.com/stopwatch_page_processing.php?town=" + town + "&state=" + state + "&distance=" + totalDistance + "&coords=" + coordsToString(runPath), true);
+        sendToProcessing.send();
+
+
+        alert("Run logged! Going back to home menu");
+        location.href = 'https://tchalifoux.jwuclasses.com/home_page.php';
     });
 
     //Deletes the loop and starts over. Asks the user to confirm before deleting
