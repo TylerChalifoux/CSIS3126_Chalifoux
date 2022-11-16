@@ -204,13 +204,13 @@ $(document).ready(function(){
 
            //Finds the pace from the total time and distance
            if(totalDistance>0){
-                finalPace = (totalTime/totalDistance);
+                finalPace = ((totalTime/60)/totalDistance);
            }else{
                 finalPace = 0;
            }
 
-           if(finalPace>100){
-            finalPaceText = "100+";
+           if(finalPace>99){
+            finalPaceText = "99+";
            }else{
             finalPaceText = finalPace.toFixed(3);
            }
