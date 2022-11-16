@@ -206,6 +206,7 @@ $(document).ready(function(){
 
         //creates the new map and puts it into the div with that ID
         showMap("googleMap", coordsToString(runPath));
+        $('#timerBox').css("display","none");
 
            //Displays the two buttons now that the loop is done and details on the run
            $('#logButton').css("display", "inline-block");
