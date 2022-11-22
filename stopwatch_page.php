@@ -83,6 +83,7 @@ include("global.php");
     </head>
     <body>
         <a id = homeButton href = home_page.html><button class = buttonStyling style="padding: 0.3em;">Home</button></a>
+        <button id = runBuddy class = buttonStyling style = "color: rgb(234, 153, 153);float: right; font-size: 0.4em">H</button>
         <br>
         <!-- For the google map after the loop is completed-->
         <div style="width:100%;height: 1000px; margin-top: 0.6em;">

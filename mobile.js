@@ -133,7 +133,7 @@ $(document).ready(function(){
                 //as long as timer is running, log location
                 function success(position) {
                     //As long as the location is accurate up to 75 meters
-                    if(position.coords.accuracy < 7500){
+                    if(position.coords.accuracy < 75){
                         //Increments the amount of coordinates and adds up the total for long and lat. This is used below to center the map in the middle of path
                         numOfCoords++;
 
@@ -277,16 +277,13 @@ $(document).ready(function(){
         var sendToProcessing = new XMLHttpRequest();
         sendToProcessing.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("txtHint").innerHTML = this.responseText;
+                alert("Run logged! Going back to home menu");
+                location.href = 'https://tchalifoux.jwuclasses.com/home_page.php';
             }
         };
 
         sendToProcessing.open("GET", "https://tchalifoux.jwuclasses.com/stopwatch_page_processing.php?town=" + town + "&state=" + state + "&distance=" + totalDistance + "&coords=" + coordsToString(runPath), true);
         sendToProcessing.send();
-
-
-        alert("Run logged! Going back to home menu");
-        location.href = 'https://tchalifoux.jwuclasses.com/home_page.php';
     });
 
     //Deletes the loop and starts over. Asks the user to confirm before deleting
@@ -294,5 +291,9 @@ $(document).ready(function(){
         if (confirm("Are you sure? Going forward will delete the loop")) {
             location.href = 'https://tchalifoux.jwuclasses.com/stopwatch_page.php';
         }
+    });
+
+    document.getElementById('runBuddy').addEventListener('click', ()=>{
+        $('#timerBox').css("background-image", "url(Icons/sadie.JPG)");
     });
 });

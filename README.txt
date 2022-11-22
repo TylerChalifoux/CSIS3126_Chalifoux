@@ -2,8 +2,8 @@
 
 TO-DO LIST------------
 
-1) redo login page desgin
-2) Make redirects work from create an account to login page and login page to home page
+1) Clean user input when making and loging in
+2) make sure users are logged in with the user id
 
 
 
