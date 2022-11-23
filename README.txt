@@ -4,6 +4,7 @@ TO-DO LIST------------
 
 1) Clean user input when making and loging in
 2) make sure users are logged in with the user id
+3) hash passwords
 
 
 

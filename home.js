@@ -40,7 +40,9 @@ $(document).ready(function(){
                         if(JSONdata[JSONdata.length-1]>0){
                             //Loops through the JSON file and prints a map in that location
                             for (let i = 0; i < JSONdata[JSONdata.length-1]; i++) {
-                                document.getElementById("localMap"+i).style.display = "inline-block";
+                                document.getElementById("localMap"+i).style.visibility = "visible";
+                                document.getElementById("mapText"+i).style.visibility = "visible";
+                                $("#mapText"+i).text('A ' + JSONdata[i][1]+ ' mile loop near ' + town);
                                 showMap("localMap"+i, JSONdata[i][0]);
                             }
                         }else{
