@@ -31,8 +31,8 @@ if($row ==0){
     $loginPageError .= "Username not found <br />";
     include ("login_page.php");
     die();
-//If password is wrong
-}else if($row["password"] != $password){
+//Hashs password, checks if it's right
+}else if($row["password"] != hash('sha256',$password)){
     $loginPageError .= "Incorrect Password <br />";
     include ("login_page.php");
     die();

@@ -2,14 +2,13 @@
 
 NEED TO DO SUMMARY----
 	1) Verify stopwatch's data is being calculated correctly
-	2) Hash passwords prior to them entering the database (login page and new account)
-	3) Finish home page UI
-	4) Finish Index page UI
-	5) Implement a SESSION_ID for users who are logged in (Login, new account, home, stopwatch, profile, and more info pages)
-	6) Create the profile page
-	7) Create the more info page 
+	2) Finish home page UI
+	3) Finish Index page UI
+	4) Implement a SESSION_ID for users who are logged in (Login, new account, home, stopwatch, profile, and more info pages)
+	5) Create the profile page
+	6) Create the more info page 
 
-CURRENT BUILD INFORMATION (Updated 11/27)----------------------------------
+CURRENT BUILD INFORMATION (Updated 11/28)----------------------------------
 - Online URL is: https://tchalifoux.jwuclasses.com/
 
 Created webpages and there current condition----
@@ -20,15 +19,13 @@ Created webpages and there current condition----
 		-Update for mobile and desktop
 		-Finish design
 
-2) Create an account page (Almost done):
+2) Create an account page (Done):
 	-Allows users to create an account
 	-Account is added to database
 	-Username and passwords are checked for eligiblity
 	-Gives good looking error messages
 	-All user inputs are cleaned
 	-Design is done for mobile and desktop
-	NEED TO DO--
-		-Hash user passwords when entered
 
 3) Login page (Almost done):
 	-Allows users to login correctly

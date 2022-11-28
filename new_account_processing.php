@@ -49,6 +49,8 @@ if($errorMessage != ""){
 	include ("new_account_page.php");
 	die();
 }else{
+	//hash password and insert into database. Redirect to login page
+	$topPassInput = hash('sha256',$topPassInput);
 	mysqli_query($connection,"INSERT INTO users (username, password) VALUES ('$newUsername','$topPassInput')")or die("Unable to add");
 	$loginPageMessage = "Account created, sign in now!";
 	include ("login_page.php");

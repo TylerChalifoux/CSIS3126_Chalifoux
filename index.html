@@ -8,36 +8,52 @@
         <script type="text/javascript" src="index.js"></script>
 
         <style>
+            @media only screen and (min-device-width : 640px){
+                .topButtons{
+                    position: absolute;
+                    padding-top: 0.7vh;
+                    padding-bottom: 0.7vh;
+                    padding-right: 1vw;
+                    padding-left: 1vw;
+                    font-size: 3vmin;
+                    color: yellow;
+                    border-radius: 50%;
+                    right: 2vw;
+                    text-align: right;
+                    background-color:rgb(234, 153, 153);
+                    margin-right: 2vw;
+                    margin-top:5vh;
+                }
+            }
+            @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+                .topButtons{
+                    position: absolute;
+                    padding-top: 0.7vh;
+                    padding-bottom: 0.7vh;
+                    padding-right: 1vw;
+                    padding-left: 1vw;
+                    font-size: 3vmin;
+                    color: yellow;
+                    border-radius: 50%;
+                    right: 2vw;
+                    text-align: right;
+                    background-color:rgb(234, 153, 153);
+                    margin-right: 2vw;
+                    margin-top:2.5vh;
+                }
+            }
             body{
                 background-color: white;
             }
 
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
-            .topButtons{
-                padding-top: 0.5em;
-                padding-bottom: 0.5em;
-                padding-right: 1em;
-                padding-left: 1em;
-                font-size: x-large;
-                color: yellow;
-                border-radius: 50%;
-                float: right;
-                background-color:rgb(234, 153, 153)
-
-            }
         </style>
     </head>
     <body>
-        <div id = logo><a href = index.html><img src = "Icons/Logo.png"></a></div>
-		<div id = topMargin style = "text-align: right;">Find a Loop
+        <div><a href = index.html><img id = logo src = "Icons/Logo.png"></a></div>
+		<button id = "indexPageSignUpButton" class ="topButtons" style = "margin-right:12vw;">Sign Up</button>
+        <button id = "indexPageSignInButton" class ="topButtons" style = "margin-right:0.2vw;">Sign In</button>
+        <div id = topMargin>Find a Loop</div>
 
-            <button id = "indexPageSignUpButton" class ="topButtons" style=" margin-right: 2em; margin-top: 1.5em;">Sign Up</button>
-            <button id = "indexPageSignInButton" class ="topButtons" style=" margin-left: 15em; margin-right: 2em; margin-top: 1.5em;">Sign In</button>
-
-        </div>
 		<br>
         <h1 style = "text-align: center;">Looking for the perfect running route?</h1>
 
@@ -56,8 +72,12 @@
         <div class="slideshow" id = photoFour style = "text-align: center;">
             <img src="index_slideshow_photos\photo4.jpg" style="width:100%">
         </div>
-
         
+        <div style = "background-color:beige">
+            <img src="Icons/indexPageMapExample.png" style="margin-left:15vw; width:20vw; float:left; margin-top:8vh;"></p>
+            <div style = "width:40vw; padding-left:5vw; padding-top: 10vh; padding-bottom:13vh; margin-top:8.5vh; float:left; font-size: 5vmin; outline: 0.1em solid black; background-color:beige">Search our vast library of user created "loops to find that perfect running or walking route"</div>
+        </div>
+        <br><br><br><br><br><br><br>
 
     </body>
 </html>
