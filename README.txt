@@ -1,37 +1,80 @@
 -----------------FIND A LOOP web app------------------
 
-TO-DO LIST------------
+NEED TO DO SUMMARY----
+	1) Verify stopwatch's data is being calculated correctly
+	2) Hash passwords prior to them entering the database (login page and new account)
+	3) Finish home page UI
+	4) Finish Index page UI
+	5) Implement a SESSION_ID for users who are logged in (Login, new account, home, stopwatch, profile, and more info pages)
+	6) Create the profile page
+	7) Create the more info page 
 
-1) Clean user input when making and loging in
-2) make sure users are logged in with the user id
-3) hash passwords
+CURRENT BUILD INFORMATION (Updated 11/27)----------------------------------
+- Online URL is: https://tchalifoux.jwuclasses.com/
+
+Created webpages and there current condition----
+
+1) Index page (Not done):
+	-Very plain, has a picture slide show and two working buttons for creating an account and logging in
+	NEED TO DO--
+		-Update for mobile and desktop
+		-Finish design
+
+2) Create an account page (Almost done):
+	-Allows users to create an account
+	-Account is added to database
+	-Username and passwords are checked for eligiblity
+	-Gives good looking error messages
+	-All user inputs are cleaned
+	-Design is done for mobile and desktop
+	NEED TO DO--
+		-Hash user passwords when entered
+
+3) Login page (Almost done):
+	-Allows users to login correctly
+	-Correctly checks database for user accounts
+	-Gives good looking error messages
+	-All user inputs are cleaned
+	-Design is done for mobile and desktop
+	NEED TO DO--
+		-Create a SESSION_ID when users login thats used accross webpages
+		-Hash user passwords when entered
+
+4) Home page (Almost done):
+	-Shows nearby loops
+	-Allows for users to search for loops (brings to search page)
+	-Current design works for both desktop and mobile
+	NEED TO DO--
+		-Make a button to go to your profile
+		-Make a button to go to the stopwatch
+		-Implement the SESSION_ID from logged in users
+
+5) Stopwatch page (Almost done):
+	-Works as a normal stopwatch
+	-Logs users location data correctly
+	-Has the tribute to my late dog (sadie(the goodest girl))  :(
+	-Designs looks good for mobile and gives an alert for desktop users
+	NEED TO DO--
+		-Verify distance and pace are calculated correctly
+		-Implement the SESSION_ID from logged in users
+
+6) Profile page (Not started):
+	-Will display all routes that user has liked
+	-Will show pace for routes the user made
+	-Allows the user to delete routes they made
+		NEED TO DO--
+			-Create UI
+			-Implement SESSION_ID
+
+7) More loop info (Not started):
+	-Will show a larger picture of the loop
+	-Allows the user to like the loop and save it
+		NEED TO DO--
+			-Create UI
+			-Implement SESSION_ID
 
 
 
-CURRENT BUILD INFORMATION-------------
-- Online URL is: https://tylerchalifoux.github.io/CSIS3126_Chalifoux/
-- Multiple webpages are now operational and UI has been completed for desktop and mobile. These include:
-	-A login page
-		-This page works for both desktop and phone
-		-Login functionality is not operating yet
-		-Clicking the logo relaunches the page
-		-Clicking the sign in button launches the home screen
-		-Clicking the create an account link launches the create an account page
-	-Create an account paage
-		-This page works for both desktop and phone
-		-Creating an account is NOT functioning yet
-		-passwords must be over 8 characters and match. This is functioning
-		-Clicking the logo relaunches the login page
-	-A home account
-		-Only optimized for desktop
-		-Very plain, only to connect the stopwatch for now
-		-Clicking the logo relaunches the login page
-		-Has a link to the stopwatch
-	-Stopwatch
-		-Optimized for phone however does work and look good on desktop
-		-Allows the user to start an accurate stopwatch. Once the timer is stopped the user can log it, reset, or resume
-		-The log it option is only available when stopped
-		-logging only pushes an alert
-		-The stopwatch DOES calculate the accurate position of the phone in Long and Lat every 5 sec.
-		-At the moment, this information is NOT being sent anywhere
--With the above websites in there current form, the entire web app can be manuvered using one only one page to start
+
+
+

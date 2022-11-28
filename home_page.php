@@ -84,6 +84,10 @@
                 visibility: hidden;
                 float:left;
             }
+            #stopwatchLinkHome{
+                border:0.3em solid green;
+                float: right;
+            }
 
         </style>
     </head>
@@ -93,7 +97,11 @@
 		<div id = topMargin>Find a Loop</div>
         <div>
             <img id = homePagePhoto src = "Icons/runnerHomePage.PNG" style="width: 100%; position: absolute; z-index: -1;">
-            <center><input id = searchBar style="height: 10%; border-radius: 50px; text-align: center;" placeholder="Search for a loop in your town or city"></center>
+            <form action="search_page.php" method="POST">
+                <input type="hidden" id = defaultSearch name="defaultSearch">
+                <center><input id = searchBar style="height: 10%; border-radius: 50px; text-align: center;" placeholder="Search for a loop in your town or city" name = "search"></center>
+            </form>
+
         </div>
         <div id = div1>
             <span id = locationText style="margin-left: 5%;"></span>

@@ -38,7 +38,7 @@ if($row ==0){
     die();
 }else{
     //$_SESSION["userid"] = $row["id"];
-    include("home_page.html");
+    include("home_page.php");
     exit();
 }
 ?>

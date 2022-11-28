@@ -1,4 +1,14 @@
 @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+	.newAccountAndLoginPageBox{
+		background-color: lightblue;
+		margin-left: 5vw;
+		margin-right: 5vw;
+		margin-top: 15vh;
+		height: 50vh;
+		box-shadow: 12px 12px rgba(0,0,0,0.3);
+		text-align: center;
+		font-size: 5vmin;
+	}
 	#topMargin{
 		display: flex;
 		justify-content: center;
@@ -13,44 +23,28 @@
 		box-shadow: 12px 12px rgba(0,0,0,0.3);
 		height: 8vh;
 	}
-
+	.inputBox{
+		height: 3vh;
+		font-size: 4vmin; 
+	}
 	#logo{
 		position: absolute;
 		margin: 0%;
 		height: 7%;
 		width: 14%;
 	}
-
-	body{
-		margin-top: 0em;
-	}
-
-	#userInputAreaCenterBox{
-		background-color: lightblue;
-		margin-left: 1em;
-		margin-right: 1em;
-		box-shadow: 12px 12px rgba(0,0,0,0.3);
-		text-align: center;
-		font-size: 4em;
-	}
-
-	.mobileStyleBox{
-		height: 100px !important;
-		font-size: 1em !important;
-	}
-	.mobileButton{
-		padding: 35px 32px;
-		font-size: 1.5em;
-	}
-	#errorMessageTop{
-		font-size: 1em !important;
-	}
-	#errorMessageBottom{
-		font-size: 1em !important;
-	}
 }
 
 @media only screen and (min-device-width : 640px){
+	.newAccountAndLoginPageBox{
+		background-color: lightblue;
+		margin-left: 24vw;
+		margin-right: 24vw;
+		margin-top: 10vh;
+		box-shadow: 12px 12px rgba(0,0,0,0.3);
+		text-align: center;
+		font-size: 2.5vmin;
+	}
 	#topMargin{
 		display: flex;
 		justify-content: center;
@@ -65,43 +59,27 @@
 		box-shadow: 12px 12px rgba(0,0,0,0.3);
 		height: 15vh;
 	}
-
+	.inputBox{
+		height: 3vh;
+		font-size: 2.5vmin; 
+	}
 	#logo{
 		position: absolute;
 		height: 13%;
 		width: 13%;
 		margin: 0%;
 	}
-
-	body{
-		margin-top: 0em;
-	}
-
-	#newAccountPageHookText{
-		text-align: center;
-		margin-top: 1.7em;
-		font-size: 3em;
-	}
-
-	#userInputAreaCenterBox{
-		background-color: lightblue;
-		margin-left: 20em;
-		margin-right: 20em;
-		box-shadow: 12px 12px rgba(0,0,0,0.3);
-		text-align: center;
-		font-size: 1.3em;
-	}
+}
+	
+body{
+	margin-top: 0em;
 }
 
-#stopwatchLinkHome{
-	border:0.3em solid green;
-	float: right;
-}
-#loginText{
-	color: rgb(229, 255, 0);
-	text-shadow: 2px 2px 5px black;
-	font-family: Bradley Hand, cursive;
-	font-size: 2em;
-	text-decoration: underline black 0.1em;
+.buttonStyling{
+	border-radius: 50%; 
+	color: yellow;
+	background-color: rgb(234, 153, 153);  
+	font-size: 0.5em;
+	border: 0.05em solid black;
 }
 

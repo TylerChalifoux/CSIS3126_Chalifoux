@@ -31,7 +31,8 @@ $(document).ready(function(){
                 town = (JSONdata.results[0].address_components[0].long_name);
                 state = (JSONdata.results[0].address_components[2].long_name);
                 document.getElementById("locationText").innerHTML = "Loops near: " + town + ", " + state;
-
+                document.getElementById("defaultSearch").value = town;
+            
                 //Send a request to processing using the state and town to get nearby loops
                 var sendToProcessing = new XMLHttpRequest();
                 sendToProcessing.onreadystatechange = function() {

@@ -10,6 +10,7 @@ include("global.php");
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="mobile.js"></script>
+        <link rel="stylesheet" href="mainStyling.css">
 
 
         <!-- Styling for mobile and desktop-->
@@ -20,13 +21,6 @@ include("global.php");
                 font-size: 0.8em;
             }
 
-            .buttonStyling{
-                    border-radius: 50%; 
-                    color: yellow;
-                    background-color: rgb(234, 153, 153);  
-                    font-size: 0.5em;
-                    border: 0.05em solid black;
-            }
             @media only screen and (min-device-width : 360px) and (max-device-width : 640px)  
             {
                 body{
@@ -40,14 +34,6 @@ include("global.php");
                     margin-left: 0.7em;
                     margin-right: 0.7em;
                     margin-top: 1em;
-                }
-                
-                .buttonStyling{
-                    border-radius: 50%; 
-                    color: yellow;
-                    background-color: rgb(234, 153, 153);  
-                    font-size: 0.5em;
-                    border: 0.05em solid black;
                 }
 
                 .timerNums{
