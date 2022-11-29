@@ -8,7 +8,7 @@ NEED TO DO SUMMARY----
 	5) Create the profile page
 	6) Create the more info page 
 
-CURRENT BUILD INFORMATION (Updated 11/28)----------------------------------
+CURRENT BUILD INFORMATION (Updated 11/29)----------------------------------
 - Online URL is: https://tchalifoux.jwuclasses.com/
 
 Created webpages and there current condition----
@@ -35,7 +35,6 @@ Created webpages and there current condition----
 	-Design is done for mobile and desktop
 	NEED TO DO--
 		-Create a SESSION_ID when users login thats used accross webpages
-		-Hash user passwords when entered
 
 4) Home page (Almost done):
 	-Shows nearby loops
