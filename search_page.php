@@ -1,3 +1,7 @@
+<?php
+include("verifyLoggedIn.php");
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>

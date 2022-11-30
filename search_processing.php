@@ -1,4 +1,5 @@
 <?php
+include("verifyLoggedIn.php");
 include("global.php");
 
 //This file takes a town and state and produces a JSON file with all the loops in it

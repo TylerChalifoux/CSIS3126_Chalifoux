@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include("global.php");
 
 $loginPageError = "";
@@ -37,8 +38,9 @@ if($row ==0){
     include ("login_page.php");
     die();
 }else{
-    //$_SESSION["userid"] = $row["id"];
-    include("home_page.php");
+    $_SESSION["userid"] = $row["id"];
+    header("Location: home_page.php");
+    ob_end_clean();
     exit();
 }
 ?>
