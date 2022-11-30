@@ -1,15 +1,13 @@
 -----------------FIND A LOOP web app------------------
 
 NEED TO DO SUMMARY----
-	1) Verify stopwatch's data is being calculated correctly
-	2) Finish adding a newly created loop into a users databse (Stopwatch_page_processing)
-	3) Finish home page UI
-	4) Finish Index page UI
+	1) Finish home page UI
+	2) Finish Index page UI
+	3) Create the profile page
+	4) Create the more info page
 	5) Implement a SESSION_ID for users who are logged in (profile, and more info pages)
-	6) Create the profile page
-	7) Create the more info page 
 
-CURRENT BUILD INFORMATION (Updated 11/29)----------------------------------
+CURRENT BUILD INFORMATION (Updated 11/30)----------------------------------
 - Online URL is: https://tchalifoux.jwuclasses.com/
 
 Created webpages and there current condition----
@@ -46,14 +44,11 @@ Created webpages and there current condition----
 5) Search page (Done):
 	-Shows loops in the town the user entered
 	
-6) Stopwatch page (Almost done):
+6) Stopwatch page (Done):
 	-Works as a normal stopwatch
 	-Logs users location data correctly
 	-Has the tribute to my late dog (sadie(the goodest girl))  :(
 	-Designs looks good for mobile and gives an alert for desktop users
-	NEED TO DO--
-		-Verify distance and pace are calculated correctly
-		-Add the newly created loop to the users database of loops
 
 7) Profile page (Not started):
 	-Will display all routes that user has liked
