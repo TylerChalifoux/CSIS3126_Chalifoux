@@ -4,10 +4,10 @@ NEED TO DO SUMMARY----
 	1) Finish home page UI
 	2) Finish Index page UI
 	3) Create the profile page
-	4) Create the more info page
-	5) Implement a SESSION_ID for users who are logged in (profile, and more info pages)
+	4) Finish more info page
+	5) Implement a SESSION_ID for users who are logged in (profile)
 
-CURRENT BUILD INFORMATION (Updated 11/30)----------------------------------
+CURRENT BUILD INFORMATION (Updated 12/2)----------------------------------
 - Online URL is: https://tchalifoux.jwuclasses.com/
 
 Created webpages and there current condition----
@@ -41,8 +41,10 @@ Created webpages and there current condition----
 		-Make a button to go to your profile
 		-Make a button to go to the stopwatch
 
-5) Search page (Done):
+5) Search page (Almost done):
 	-Shows loops in the town the user entered
+	NEED TO DO--
+		-Create a link to More_info from the search page	
 	
 6) Stopwatch page (Done):
 	-Works as a normal stopwatch
@@ -58,12 +60,14 @@ Created webpages and there current condition----
 			-Create UI
 			-Implement SESSION_ID
 
-8) More loop info (Not started):
-	-Will show a larger picture of the loop
-	-Allows the user to like the loop and save it
+8) More loop info (Not done):
+	-Shows a larger picture of the loop
+	-Shows text about the loop
 		NEED TO DO--
-			-Create UI
-			-Implement SESSION_ID
+			-Finish UI
+			-Add randomized adjectives for loop description
+			-Allow uses to like loop
+			-Create a link to More_info from the search page
 
 
 

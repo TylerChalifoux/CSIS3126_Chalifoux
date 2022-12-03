@@ -45,6 +45,7 @@ $(document).ready(function(){
                                 document.getElementById("mapText"+i).style.visibility = "visible";
                                 $("#mapText"+i).text('A ' + JSONdata[i][1]+ ' mile loop near ' + town);
                                 showMap("localMap"+i, JSONdata[i][0]);
+                                document.getElementById("mapURL"+i).href = "map_info.php?coords="+JSONdata[i][0];
                             }
                         }else{
                             document.getElementById("locationText").innerHTML = "No loops in your area, search for one.";

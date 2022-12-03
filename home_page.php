@@ -112,23 +112,23 @@ include("verifyLoggedIn.php");
 
 
                 <div class = mapTextCombo>
-                    <img id = localMap0 class = map><br>
+                    <a id = mapURL0><img id = localMap0 class = map><br></a>
                     <span  id = mapText0 class = mapText></span>
                 </div>
                 <div class = mapTextCombo>
-                    <img id = localMap1 class = map><br>
+                    <a id = mapURL1><img id = localMap1 class = map><br></a>
                     <span  id = mapText1 class = mapText></span>
                 </div>
                 <div class = mapTextCombo>
-                    <img id = localMap2 class = map><br>
+                    <a id = mapURL2><img id = localMap2 class = map><br></a>
                     <span  id = mapText2 class = mapText></span>
                 </div>
                 <div class = mapTextCombo>
-                    <img id = localMap3 class = map><br>
+                    <a id = mapURL3><img id = localMap3 class = map><br></a>
                     <span  id = mapText3 class = mapText></span>
                 </div>
                 <div class = mapTextCombo>
-                    <img id = localMap4 class = map><br>
+                    <a id = mapURL4><img id = localMap4 class = map><br></a>
                     <span  id = mapText4 class = mapText></span>
                 </div>
 
