@@ -47,8 +47,74 @@ include("verifyLoggedIn.php");
                 margin-left:3.5vw;
                 margin-right:3.5vw;
                 }
+                #stopwatchImage{
+                    position: absolute;
+                    height:5vh;
+                    width:8vw;
+                    margin-left:73vw;
+                    margin-top:2vh;
+                }
+                #stopwatchLink{
+                    display: block;
+                    position: absolute;
+                    height:5vh;
+                    width:7vw;
+                    margin-left:73vw;
+                    margin-top:2vh;
+                }
+                #profileImage{
+                    position: absolute;
+                    height:5vh;
+                    width:8vw;
+                    margin-left:84vw;
+                    margin-top:2vh;
+                }
+                #profileLink{
+                    display: block;
+                    position: absolute;
+                    height:5vh;
+                    width:7.5vw;
+                    margin-left:84vw;
+                    margin-top:2vh;
+                }
+                #stopwatchText{
+                    display: none;
+                }
+                #profileText{
+                    display: none;
+                }
             }
             @media only screen and (min-device-width : 640px){
+                #stopwatchImage{
+                    position: absolute;
+                    height:5vh;
+                    width:5vw;
+                    margin-left:78vw;
+                    margin-top:3vh;
+                }
+                #stopwatchLink{
+                    display: block;
+                    position: absolute;
+                    height:8vh;
+                    width:7vw;
+                    margin-left:77vw;
+                    margin-top:3vh;
+                }
+                #profileImage{
+                    position: absolute;
+                    height:5vh;
+                    width:3vw;
+                    margin-left:90vw;
+                    margin-top:3vh;
+                }
+                #profileLink{
+                    display: block;
+                    position: absolute;
+                    height:8vh;
+                    width:8vw;
+                    margin-left:88vw;
+                    margin-top:3vh;
+                }
                 #homePagePhoto{
                     height: 40%;
                 }
@@ -87,19 +153,31 @@ include("verifyLoggedIn.php");
                 visibility: hidden;
                 float:left;
             }
-            #stopwatchLinkHome{
-                border:0.3em solid green;
-                float: right;
-            }
 
         </style>
     </head>
 
     <body>
         <div><a href = index.html><img id = logo src = "Icons/Logo.png"></a></div>
+
+        <img id = stopwatchImage src = "Icons/runningIcon.png">
+        <label id = stopwatchText style = "position: absolute; margin-right: 15vw; margin-left: 77vw; margin-top: 8vh; font-size: 3vmin">Log a Loop</label>
+        <a id = stopwatchLink href = stopwatch_page.php></a>
+
+        <img id = profileImage src = "Icons/profileIcon.png">
+        <label id = profileText style = "position: absolute; margin-left: 88vw; margin-top: 8vh; font-size: 3vmin">Your Profile</label>
+        <a id = profileLink href = profile_page.php></a>
+
+
+
+
+
+
+
+
 		<div id = topMargin>Find a Loop</div>
         <div>
-            <img id = homePagePhoto src = "Icons/runnerHomePage.PNG" style="width: 100%; position: absolute; z-index: -1;">
+            <img id = homePagePhoto src = "Icons/runnerHomePage.PNG" style="width: 99%; position: absolute; z-index: -1;">
             <form action="search_page.php" method="POST">
                 <input type="hidden" id = defaultSearch name="defaultSearch">
                 <center><input id = searchBar style="height: 10%; border-radius: 50px; text-align: center;" placeholder="Search for a loop in your town or city" name = "search"></center>
@@ -109,8 +187,6 @@ include("verifyLoggedIn.php");
         <div id = div1>
             <span id = locationText style="margin-left: 5%;"></span>
             <div style = "margin-top: 1vh;">
-
-
                 <div class = mapTextCombo>
                     <a id = mapURL0><img id = localMap0 class = map><br></a>
                     <span  id = mapText0 class = mapText></span>
@@ -131,11 +207,7 @@ include("verifyLoggedIn.php");
                     <a id = mapURL4><img id = localMap4 class = map><br></a>
                     <span  id = mapText4 class = mapText></span>
                 </div>
-
             </div>
-            <br>
-            <div id = stopwatchLinkHome><a href = stopwatch_page.html><img src = "Icons/runningIcon.png" style="height: 5em;"></a>Log Run</div>
         </div>
     </body>
-
 </html>

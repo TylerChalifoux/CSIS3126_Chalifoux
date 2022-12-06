@@ -77,7 +77,14 @@ include("verifyLoggedIn.php");
         <div>
 
         <p style = "margin-top: 3vh; margin-left: 1vw; font-size: 3vmin;; margin-bottom: 0vh">Loops near: <button id = backHomeButton class = buttonStyling style = "margin-right: 4vw; float:right; padding: 1em; color: yellow;" type="button">Home</button></p>
-        <p style = "margin-right: 30vw; margin-top: 0vh; margin-left: 3.5vw; font-size: 3vmin;" id = searchText><?php echo $_POST["search"]; ?></p>
+        <p style = "margin-right: 30vw; margin-top: 0vh; margin-left: 3.5vw; font-size: 3vmin;" id = searchText>
+        <?php 
+            if($_POST["search"] == ""){
+                echo $_REQUEST["search"];
+            }else{
+                echo $_POST["search"]; 
+            }
+        ?></p>
 
         <div id = noResults style = "text-align:center; font-size: 3.5vmin; display:none">
             <p  id = noResultsText>Oops.. We couldn't find any Loops in that area. Check your spelling or let's make a new one!</p>
@@ -86,63 +93,63 @@ include("verifyLoggedIn.php");
 
         <div style = "margin-top: 3vh;">
             <div class = mapTextCombo>
-                <img id = localMap0 class = map><br>
+                <a id = mapURL0><img id = localMap0 class = map><br></a>
                 <span  id = mapText0 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap1 class = map><br>
+                <a id = mapURL1><img id = localMap1 class = map><br></a>
                 <span  id = mapText1 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap2 class = map><br>
+                <a id = mapURL2><img id = localMap2 class = map><br></a>
                 <span  id = mapText2 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap3 class = map><br>
+                <a id = mapURL3><img id = localMap3 class = map><br></a>
                 <span  id = mapText3 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap4 class = map><br>
+                <a id = mapURL4><img id = localMap4 class = map><br></a>
                 <span  id = mapText4 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap5 class = map><br>
+                <a id = mapURL5><img id = localMap5 class = map><br></a>
                 <span  id = mapText5 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap6 class = map><br>
+                <a id = mapURL6><img id = localMap6 class = map><br></a>
                 <span  id = mapText6 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap7 class = map><br>
+                <a id = mapURL7><img id = localMap7 class = map><br></a>
                 <span  id = mapText7 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap8 class = map><br>
+                <a id = mapURL8><img id = localMap8 class = map><br></a>
                 <span  id = mapText8 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap9 class = map><br>
+                <a id = mapURL9><img id = localMap9 class = map><br></a>
                 <span  id = mapText9 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap10 class = map><br>
+                <a id = mapURL10><img id = localMap10 class = map><br></a>
                 <span  id = mapText10 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap11 class = map><br>
+                <a id = mapURL11><img id = localMap11 class = map><br></a>
                 <span  id = mapText11 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap12 class = map><br>
+                <a id = mapURL12><img id = localMap12 class = map><br></a>
                 <span  id = mapText12 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap13 class = map><br>
+                <a id = mapURL13><img id = localMap13 class = map><br></a>
                 <span  id = mapText13 class = mapText></span>
             </div>
             <div class = mapTextCombo>
-                <img id = localMap14 class = map><br>
+                <a id = mapURL14><img id = localMap14 class = map><br></a>
                 <span  id = mapText14 class = mapText></span>
             </div>
         </div>

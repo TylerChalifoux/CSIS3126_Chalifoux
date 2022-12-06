@@ -272,7 +272,6 @@ $(document).ready(function(){
     });
 
     //Logs the users loop, brings that back to the home page
-
     document.getElementById('logButton').addEventListener('click', ()=>{
         var sendToProcessing = new XMLHttpRequest();
         sendToProcessing.onreadystatechange = function() {

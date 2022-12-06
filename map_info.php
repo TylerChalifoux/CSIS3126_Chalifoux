@@ -18,11 +18,39 @@ $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
                     width:40vw;
                     height:80vh;
                 }
+                #mapInfo{
+                    padding-top:20vh;
+                    margin-left: 45vw; 
+                    width:35vw;
+                }
+                #isLiked{
+                    width: 3vw;
+                    height: 3vh;
+                    border-radius: 15px;
+                    margin-top: 5vh;
+                    margin-left:45vw;
+                }
+                #bottomBox{
+                    padding-bottom:40vh;
+                }
             }
             @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
                 #map{
                     width:86vw;
                     height:43vh;
+                }
+                #mapInfo{
+                    margin-top:50vh;
+                    padding-bottom:1vh;
+                }
+                #isLiked{
+                    width: 3vw;
+                    height: 3vh;
+                    border-radius: 15px;
+                    margin-top: 3vh;
+                }
+                #bottomBox{
+                    padding-bottom:5vh;
                 }
             }
             .buttonStyling{
@@ -31,7 +59,12 @@ $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
                     background-color: rgb(234, 153, 153);  
                     font-size: 2vmin;
                     border: 0.05em solid black;
-                    margin-top:2vh;
+                    margin-top:0vh;
+                    margin-right: 2vw;
+                    float: right;
+                    padding: 1em;
+                    color: yellow;
+                    margin-bottom:5vh;
             }
         </style>
 
@@ -43,12 +76,15 @@ $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
         <div>
         <p id = coords style = "display: none"><?php echo $coords; ?></p>
 
-        <div style="margin-right: 3vw; margin-top: 4.5vh; margin-left:3vw; padding-left: 2vw; background-color: lightgrey; ">
-            <p id = mapTitle style = "margin-left: 2vw; margin-bottom: 1vh; font-size: 4vmin"></p>
-            <img id = map style = "vertical-align:middle; outline: 0.2em solid black;">
-            <button id = backHomeButton class = buttonStyling style = "margin-right: 2vw; float:right; padding: 1em; color: yellow;" type="button">Home</button>
-            <span id = mapInfo style= "font-size: 6vmin; margin-left: 3vw"></span>
+        <div style="margin-right: 3vw; margin-top: 4.5vh; margin-left:3vw; padding-left: 2vw; background-color: lightgrey;">
+            <p id = mapTitle style = "padding-top:2.5vh; margin-left: 2vw; margin-bottom: 0.5vh; font-size: 4vmin"></p>
+            <button id = backHomeButton class = buttonStyling type="button">Back</button><br>
+            <img id = map style = "position: absolute; float:left; outline: 0.2em solid black; margin-top:3vh">
+            <div id= mapInfo style= "font-size: 7vmin;"></div>
+            <div id = bottomBox>
+                <input id= isLiked type="checkbox"></input>
+                <label for="isLiked" style = "font-size: 3vmin"> Save Loop</label><br>
+            </div>
         </div>
-
     </body>
 </html>

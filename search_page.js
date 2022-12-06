@@ -34,6 +34,7 @@ $(document).ready(function(){
                             document.getElementById("mapText"+i).style.visibility = "visible";
                             $("#mapText"+i).text('A ' + JSONdata[i][1]+ ' mile loop in ' + JSONdata[i][2]+', '+JSONdata[i][3]);
                             showMap("localMap"+i, JSONdata[i][0]);
+                            document.getElementById("mapURL"+i).href = "map_info.php?coords="+JSONdata[i][0] + "&wasSearched=True";
                         }
                     }else{
                         document.getElementById("noResults").style.display = "inline-block";
@@ -41,6 +42,6 @@ $(document).ready(function(){
                 }
             };
     
-            sendToProcessing.open("GET", "https://tchalifoux.jwuclasses.com/search_processing.php?search=" + document.getElementById("searchText").innerHTML, true);
+            sendToProcessing.open("GET", "https://tchalifoux.jwuclasses.com/search_processing.php?search=" + document.getElementById("searchText").innerText, true);
             sendToProcessing.send();
 });
