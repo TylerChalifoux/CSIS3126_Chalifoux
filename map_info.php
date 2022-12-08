@@ -33,6 +33,9 @@ $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
                 #bottomBox{
                     padding-bottom:40vh;
                 }
+                #footer{
+                    margin-top: 5vh; 
+                }
             }
             @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
                 #map{
@@ -51,6 +54,9 @@ $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
                 }
                 #bottomBox{
                     padding-bottom:5vh;
+                }
+                #footer{
+                    display: none;
                 }
             }
             .buttonStyling{
@@ -71,7 +77,7 @@ $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
     </head>
 
     <body>
-        <div><a href = index.html><img id = logo src = "Icons/Logo.png"></a></div>
+        <div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
 		    <div id = topMargin>Find a Loop</div>
         <div>
         <p id = coords style = "display: none"><?php echo $coords; ?></p>
@@ -86,5 +92,6 @@ $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
                 <label for="isLiked" style = "font-size: 3vmin"> Save Loop</label><br>
             </div>
         </div>
+        <?php include("footer.html"); ?>
     </body>
 </html>

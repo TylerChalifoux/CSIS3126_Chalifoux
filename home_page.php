@@ -83,6 +83,9 @@ include("verifyLoggedIn.php");
                 #profileText{
                     display: none;
                 }
+                #footer{
+                    display:none;
+                }
             }
             @media only screen and (min-device-width : 640px){
                 #stopwatchImage{
@@ -143,7 +146,10 @@ include("verifyLoggedIn.php");
                 min-width: 15vw;
                 margin-left:  1.2vw;
                 margin-right: 1.2vw;
-            }
+                }
+                #footer{
+                    margin-top: 45vh; 
+                }
             }
             body{
                 background: lightgray !important;
@@ -158,7 +164,7 @@ include("verifyLoggedIn.php");
     </head>
 
     <body>
-        <div><a href = index.html><img id = logo src = "Icons/Logo.png"></a></div>
+        <div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
 
         <img id = stopwatchImage src = "Icons/runningIcon.png">
         <label id = stopwatchText style = "position: absolute; margin-right: 15vw; margin-left: 77vw; margin-top: 8vh; font-size: 3vmin">Log a Loop</label>
@@ -167,13 +173,6 @@ include("verifyLoggedIn.php");
         <img id = profileImage src = "Icons/profileIcon.png">
         <label id = profileText style = "position: absolute; margin-left: 88vw; margin-top: 8vh; font-size: 3vmin">Your Profile</label>
         <a id = profileLink href = profile_page.php></a>
-
-
-
-
-
-
-
 
 		<div id = topMargin>Find a Loop</div>
         <div>
@@ -209,5 +208,6 @@ include("verifyLoggedIn.php");
                 </div>
             </div>
         </div>
+        <?php include("footer.html"); ?>
     </body>
 </html>

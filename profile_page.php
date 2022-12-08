@@ -1,17 +1,16 @@
 <?php
 include("verifyLoggedIn.php");
 ?>
-
 <!DOCTYPE html>
 <html>
 	<head>
         <meta name="viewport" content="initial-scale=1">
+        <title>Home</title>
         <link rel="stylesheet" href="mainStyling.css">
-        <title>Search Results</title>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script type="text/javascript" src="search_page.js"></script>
-
+        <script type="text/javascript" src="profile_page.js"></script>
+        
         <style>
             @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
                 .map{
@@ -57,40 +56,36 @@ include("verifyLoggedIn.php");
                     font-size: 3vmin;
                     visibility: hidden;
                     float:left;
-                    }
+                }
             }
             .buttonStyling{
-                    border-radius: 50%; 
-                    color: yellow;
-                    background-color: rgb(234, 153, 153);  
-                    font-size: 0.5em;
-                    border: 0.05em solid black;
+                border-radius: 50%; 
+                color: yellow;
+                background-color: rgb(234, 153, 153);  
+                font-size: 0.5em;
+                border: 0.05em solid black;
+            }
+            #footer{
+                display:none;
             }
         </style>
-    
     </head>
-    
+
     <body>
         <div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
-		    <div id = topMargin>Find a Loop</div>
+            <div id = topMargin>Find a Loop</div>
         <div>
-
-        <p style = "margin-top: 3vh; margin-left: 1vw; font-size: 3vmin;; margin-bottom: 0vh">Loops near: <button id = backHomeButton class = buttonStyling style = "margin-right: 4vw; float:right; padding: 1em; color: yellow;" type="button">Home</button></p>
-        <p style = "margin-right: 30vw; margin-top: 0vh; margin-left: 3.5vw; font-size: 3vmin;" id = searchText>
-        <?php 
-            if($_POST["search"] == ""){
-                echo $_REQUEST["search"];
-            }else{
-                echo $_POST["search"]; 
-            }
-        ?></p>
-
+        <p style = "margin-top: 3vh; margin-left: 1vw; font-size: 3vmin;; margin-bottom: 0vh">Your saved Loops: 
+            <button id = backHomeButton class = buttonStyling style = "margin-right: 4vw; float:right; padding: 1em; color: yellow;" type="button">Home</button>
+            <button id = signOutButton class = buttonStyling style = "margin-right: 5vw; float:right; padding: 1em; color: yellow;" type="button">Sign Out</button>
+        </p>
+        </div>
         <div id = noResults style = "text-align:center; font-size: 3.5vmin; display:none">
-            <p  id = noResultsText>Oops.. We couldn't find any Loops in that area. Check your spelling or let's make a new one!</p>
-            <img id = noResultsImage src = "Icons/lostWithMap.PNG" style = "width: 40vw; heigh: 40vh"><br>
+            <p  id = noResultsText>Looks like you don't have any saved loops. Let's find or make some!</p>
+            <img id = noResultsImage src = "Icons/noSavedLoopsImage.jpg" style = "width: 50vw; heigh: 40vh"><br>
         </div>
 
-        <div style = "margin-top: 3vh;">
+        <div style = "margin-top: 3vh; margin-bottom: 30vh;">
             <div class = mapTextCombo>
                 <a id = mapURL0><img id = localMap0 class = map><br></a>
                 <span  id = mapText0 class = mapText></span>
@@ -152,5 +147,6 @@ include("verifyLoggedIn.php");
                 <span  id = mapText14 class = mapText></span>
             </div>
         </div>
+        <?php include("footer.html"); ?>
     </body>
 </html>

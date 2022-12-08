@@ -25,6 +25,9 @@
                 .newAccountAndLoginPageBox{
                     margin-top: 4vh;
                 }
+                #footer{
+                    display:none;
+                }
             }
             @media only screen and (min-device-width : 640px){
                 #signUpButton{
@@ -39,6 +42,9 @@
                     margin-top: 1vh;
                     font-size: 1.5vmin;
                 }
+                #footer{
+                    margin-top: 20vh;
+                }
             }
             body{
 				background: url(Icons/landingNewAccountBackground.jpg);
@@ -49,7 +55,7 @@
 	</head>           
 
     <body>
-        <div><a href = index.html><img id = logo src = "Icons/Logo.png"></a></div>
+        <div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
 		<div id = topMargin>Find a Loop</div>
 
         <h1 id = newAccountPageHookText>Your search for a new running route ends here</h1>
@@ -63,9 +69,9 @@
                 <p class = userPassErrorMess style = "color: red;"> <?php echo $errorMessage; ?> </p>
 
                 <p style = "margin-top: 3vh; margin-bottom: 0.5vh">Enter a New Password Below</p>
-                <input type="password" placeholder="Enter New Password" class = "inputBox" name = "topPassInput" id = "topPassInput" value="<?php echo htmlspecialchars($_POST["topPassInput"], ENT_QUOTES);?>"><br />
+                <input type="password" placeholder="Enter New Password" class = "inputBox" name = "topPassInput" id = "topPassInput" value="<?php echo htmlspecialchars($_POST["topPassInput"], ENT_QUOTES);?>"><br>
                 <p style = "margin-top: 2vh; margin-bottom: 0.5vh;">Confirm Password Below</p>
-                <input type="password" placeholder="Re-enter New Password" class = "inputBox" name = "bottomPassInput" id = "bottomPassInput" value="<?php echo htmlspecialchars($_POST["bottomPassInput"], ENT_QUOTES);?>"><br />
+                <input type="password" placeholder="Re-enter New Password" class = "inputBox" name = "bottomPassInput" id = "bottomPassInput" value="<?php echo htmlspecialchars($_POST["bottomPassInput"], ENT_QUOTES);?>"><br>
                 <p id = "passCharErrorMessage" class = userPassErrorMess>- Password must be at least 8 characters</p>
                 <p id = "passMatchErrorMessage" class = userPassErrorMess>- Both passwords must match </p>
                 <br>
@@ -73,5 +79,6 @@
                 <br><br>
             </form>
         </div>
+        <?php include("footer.html"); ?>
     </body>
 </html>

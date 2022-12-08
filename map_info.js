@@ -102,6 +102,8 @@ $(document).ready(function(){
     $('#backHomeButton').click(function(){
         if(wasSearched === "True"){
             location.href = "https://tchalifoux.jwuclasses.com/search_page.php?search="+town;
+        }else if(wasSearched === "profile"){
+            location.href = "https://tchalifoux.jwuclasses.com/profile_page.php";
         }else{
             location.href = "https://tchalifoux.jwuclasses.com/home_page.php";
         }

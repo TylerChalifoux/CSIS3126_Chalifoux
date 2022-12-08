@@ -22,6 +22,9 @@
 					background: url(Icons/landingNewAccountBackground.jpg);
 					background-size: stretch;
 				}
+				#footer{
+                    display:none;
+                }
 			}
 			@media only screen and (min-device-width : 640px){
 				#signInButton{
@@ -39,13 +42,16 @@
 					background: url(Icons/landingNewAccountBackground.jpg);
 					background-size: cover;
 				}
+				#footer{
+                    margin-top:30vh;
+                }
 			}
 
 		</style>
 	</head>
 
 	<body>
-		<div><a href = index.html><img id = logo src = "Icons/Logo.png"></a></div>
+		<div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
 		<div id = topMargin>Find a Loop</div>
 
 		<div class = newAccountAndLoginPageBox>
@@ -53,18 +59,18 @@
 				<h2 id = loginText>  Login  </h2>
 				
 				<p style = "margin-bottom: 1vh;">USERNAME</p>
-				<div><input type="text" placeholder="Enter Username" class = "inputBox" name = "enteredUsername" id = "enteredUsername" style = "margin-top: 1vh;" value="<?php echo htmlspecialchars($_POST["enteredUsername"], ENT_QUOTES);?>"><br />
+				<div><input type="text" placeholder="Enter Username" class = "inputBox" name = "enteredUsername" id = "enteredUsername" style = "margin-top: 1vh;" value="<?php echo htmlspecialchars($_POST["enteredUsername"], ENT_QUOTES);?>"></div><br>
 
 				<p style = "margin-top: 4.5vh; margin-bottom: 1vh;">PASSWORD</p>
-				<div><input type="password" placeholder="Enter Password" class = "inputBox" name = "enteredPassword" id = "enteredPassword" style = "margin-top: 1vh;" value="<?php echo htmlspecialchars($_POST["enteredPassword"], ENT_QUOTES);?>"><br />
+				<div><input type="password" placeholder="Enter Password" class = "inputBox" name = "enteredPassword" id = "enteredPassword" style = "margin-top: 1vh;" value="<?php echo htmlspecialchars($_POST["enteredPassword"], ENT_QUOTES);?>"></div><br>
 
 				<p style = "color: green; margin-bottom: 1vh;"><?php echo $loginPageMessage; ?></p>
 				<p style = "color: red; margin-bottom: 1vh;"><?php echo $loginPageError; ?></p>
-				<P><button id = signInButton class = buttonStyling type="submit">Sign In</button>
+				<p><button id = signInButton class = buttonStyling type="submit">Sign In</button></p>
 			</form>
 			<p style = "margin-bottom: 7vh; margin-top: 4.5vh;">No account? Create one here <a href= new_account_page.php> Click here </a></p>
 			<br>
 		</div>
+		<?php include("footer.html"); ?>
 	</body>
-
 </html>

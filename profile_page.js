@@ -1,7 +1,6 @@
 $(document).ready(function(){
-
-    //This is the function that takes an HTML ID and coordinates and makes a map in that ID
-    function showMap (id, coords){
+     //This is the function that takes an HTML ID and coordinates and makes a map in that ID
+     function showMap (id, coords){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
             if (this.readyState == 4 && this.status == 200) {
@@ -21,6 +20,16 @@ $(document).ready(function(){
     $('#backHomeButton').click(function(){
         location.href = "https://tchalifoux.jwuclasses.com/home_page.php";
     });
+    $('#signOutButton').click(function(){
+        var sendToProcessing = new XMLHttpRequest();
+        sendToProcessing.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                location.href = "https://tchalifoux.jwuclasses.com/index.php";
+            }
+        };
+        sendToProcessing.open("GET", "https://tchalifoux.jwuclasses.com/global.php?signout=true", true);
+        sendToProcessing.send();
+    });
 
     var sendToProcessing = new XMLHttpRequest();
         sendToProcessing.onreadystatechange = function() {
@@ -34,14 +43,19 @@ $(document).ready(function(){
                             document.getElementById("mapText"+i).style.visibility = "visible";
                             $("#mapText"+i).text('A ' + JSONdata[i][1]+ ' mile loop in ' + JSONdata[i][2]+', '+JSONdata[i][3]);
                             showMap("localMap"+i, JSONdata[i][0]);
-                            document.getElementById("mapURL"+i).href = "map_info.php?coords="+JSONdata[i][0] + "&wasSearched=True";
+                            document.getElementById("mapURL"+i).href = "map_info.php?coords="+JSONdata[i][0] + "&wasSearched=profile";
                         }
                     }else{
                         document.getElementById("noResults").style.display = "inline-block";
                     }
+                    //This displays the footer if not on mobile
+                    if(window.innerWidth>600){
+                        document.getElementById("footer").style.display = "inline-block";
+                        document.getElementById("footer").style.width = "100%";
+                    }
                 }
             };
     
-            sendToProcessing.open("GET", "https://tchalifoux.jwuclasses.com/search_processing.php?search=" + document.getElementById("searchText").innerText, true);
+            sendToProcessing.open("GET", "https://tchalifoux.jwuclasses.com/profile_page_processing.php", true);
             sendToProcessing.send();
 });

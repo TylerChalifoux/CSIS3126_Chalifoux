@@ -79,7 +79,7 @@ include("global.php");
             <!-- This part is used to display the message when you are on a laptop instead of a phone-->
             <div id = boxOnlySeenOnComputers style = " display: none; text-align: center; font-size: 5em">
                 <br>Really? You want to run with a laptop? Bring out your mobile phone and go back to this page<br><br>
-                <a href = home_page.html><button class = buttonStyling style="padding: 2em;">Home</button></a>
+                <a href = home_page.php><button class = buttonStyling style="padding: 2em;">Home</button></a>
             </div>
 
             <!-- Numbers and boxs for the timer-->
