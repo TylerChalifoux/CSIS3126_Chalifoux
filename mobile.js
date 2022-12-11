@@ -62,13 +62,13 @@ $(document).ready(function(){
         if(!killed){
             //Sets the timer equal the difference in between the start and now
             currentMil = Date.now() - startTime;
-            //if the miliseconds goes above 1000, increase seconds by 1 and reset the start timer to now
+            //if the milliseconds goes above 1000, increase seconds by 1 and reset the start timer to now
             if(currentMil>1000){
                 startTime = Date.now();
                 currentMil = 0;
                 currentSec++;
             }else{
-                //Adds one or two zeros into the display of the miliseconds to prevent text from moving
+                //Adds one or two zeros into the display of the milliseconds to prevent text from moving
                 if(currentMil<10){
                     $('#mil').text('00');
                 }else if(currentMil<100){

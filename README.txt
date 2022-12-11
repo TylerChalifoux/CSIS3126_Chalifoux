@@ -14,7 +14,7 @@ CURRENT BUILD INFORMATION (Updated 12/7)----------------------------------
 2) Create an account page:
 	-Allows users to create an account
 	-Account is added to database
-	-Username and passwords are checked for eligiblity
+	-Username and passwords are checked for eligibility
 	-Gives good looking error messages
 	-All user inputs are cleaned
 	-Design is done for mobile and desktop
