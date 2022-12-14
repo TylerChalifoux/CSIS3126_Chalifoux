@@ -1,6 +1,7 @@
 <?php
 include("global.php");
 include("verifyLoggedIn.php");
+//gets the coordinates
 $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
 ?>
 <!DOCTYPE html>
@@ -12,6 +13,8 @@ $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="map_info.js"></script>
+
+        <!--Styling for desktop and mobile -->
         <style>
             @media only screen and (min-device-width : 640px){
                 #map{
@@ -80,8 +83,10 @@ $coords = mysqli_real_escape_string($connection,$_REQUEST["coords"]);
         <div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
 		    <div id = topMargin>Find a Loop</div>
         <div>
+        <!--Pastes the coords but hides it, used in the JS file -->
         <p id = coords style = "display: none"><?php echo $coords; ?></p>
 
+        <!--Large map, checkbox and preset text. All set from the JS file -->
         <div style="margin-right: 3vw; margin-top: 4.5vh; margin-left:3vw; padding-left: 2vw; background-color: lightgrey;">
             <p id = mapTitle style = "padding-top:2.5vh; margin-left: 2vw; margin-bottom: 0.5vh; font-size: 4vmin"></p>
             <button id = backHomeButton class = buttonStyling type="button">Back</button><br>

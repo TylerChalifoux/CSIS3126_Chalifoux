@@ -12,6 +12,7 @@ include("verifyLoggedIn.php");
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="search_page.js"></script>
 
+        <!--Styling for design and mobile-->
         <style>
             @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
                 .map{
@@ -71,6 +72,7 @@ include("verifyLoggedIn.php");
     </head>
     
     <body>
+        <!-- top margin-->
         <div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
 		    <div id = topMargin>Find a Loop</div>
         <div>
@@ -78,6 +80,7 @@ include("verifyLoggedIn.php");
         <p style = "margin-top: 3vh; margin-left: 1vw; font-size: 3vmin;; margin-bottom: 0vh">Loops near: <button id = backHomeButton class = buttonStyling style = "margin-right: 4vw; float:right; padding: 1em; color: yellow;" type="button">Home</button></p>
         <p style = "margin-right: 30vw; margin-top: 0vh; margin-left: 3.5vw; font-size: 3vmin;" id = searchText>
         <?php 
+        //Shows the entered town on top of page, used in JS file as well
             if($_POST["search"] == ""){
                 echo $_REQUEST["search"];
             }else{
@@ -85,11 +88,13 @@ include("verifyLoggedIn.php");
             }
         ?></p>
 
+        <!-- Only shows if there are no results-->
         <div id = noResults style = "text-align:center; font-size: 3.5vmin; display:none">
             <p  id = noResultsText>Oops.. We couldn't find any Loops in that area. Check your spelling or let's make a new one!</p>
             <img id = noResultsImage src = "Icons/lostWithMap.PNG" style = "width: 40vw; heigh: 40vh"><br>
         </div>
 
+        <!--Shows all of the loops in the entered town-->
         <div style = "margin-top: 3vh;">
             <div class = mapTextCombo>
                 <a id = mapURL0><img id = localMap0 class = map><br></a>

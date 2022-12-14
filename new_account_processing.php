@@ -3,7 +3,7 @@ include("global.php");
 
 $errorMessage = "";
 
-//-----This whole part is to verify that the username is valid-------
+//Check if username is blank, update error message and send back if it is
 if ($_POST["newUsername"] == ""){
 	$errorMessage .= "Username is required<br />";
 }else{
@@ -26,7 +26,7 @@ if ($_POST["newUsername"] == ""){
 	}
 }
 
-//-----This whole part is to verify that the password is valid-------
+//Checks if either top or bottom password are blank. Updates error message
 if ($_POST["topPassInput"] == "" || $_POST["bottomPassInput"] == ""){
 	$errorMessage .= "Password is required<br />";
 }else{
@@ -35,7 +35,7 @@ if ($_POST["topPassInput"] == "" || $_POST["bottomPassInput"] == ""){
 	$topPassInput = mysqli_real_escape_string($connection,$_POST["topPassInput"]);
 	$bottomPassInput = mysqli_real_escape_string($connection,$_POST["bottomPassInput"]);
 
-	//checks if it matches or isnt long enough
+	//checks if it matches or is not long enough
 	if($topPassInput != $bottomPassInput){
 		$errorMessage .= "Passwords must match<br />";
 	}

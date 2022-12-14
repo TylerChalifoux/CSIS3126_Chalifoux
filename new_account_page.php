@@ -7,6 +7,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="new_account.js"></script>
 
+        <!--Styling for desktop and mobile -->
         <style>
             @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
                 #signUpButton{
@@ -55,6 +56,7 @@
 	</head>           
 
     <body>
+        <!-- Top margin -->
         <div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
 		<div id = topMargin>Find a Loop</div>
 
@@ -62,6 +64,7 @@
 
         <div class = newAccountAndLoginPageBox>
             <br>
+            <!--Form that submits the data entered to the processing file-->
             <form id = newAccountForm action="new_account_processing.php" method="POST">
                 <p style = "margin-bottom: 0.5vh;">Enter a New Username Below</p>
                 <input type="text" placeholder="Enter New Username" class = "inputBox" name = "newUsername" id = "newUsername" value="<?php echo htmlspecialchars($_POST["newUsername"], ENT_QUOTES);?>"><br />

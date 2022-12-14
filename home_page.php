@@ -11,6 +11,7 @@ include("verifyLoggedIn.php");
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="home.js"></script>
 
+        <!-- Styling for both mobile and desktop-->
         <style>
             @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
                 #homePagePhoto{
@@ -162,7 +163,8 @@ include("verifyLoggedIn.php");
 
         </style>
     </head>
-
+    
+    <!--Below is for the top margin area including the profile and log a run button and the search bar-->
     <body>
         <div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
 
@@ -182,6 +184,7 @@ include("verifyLoggedIn.php");
                 <center><input id = searchBar style="height: 10%; border-radius: 50px; text-align: center;" placeholder="Search for a loop in your town or city" name = "search"></center>
             </form>
 
+    <!--below is for the maps on the page. The images are all blank until set by the JS file-->
         </div>
         <div id = div1>
             <span id = locationText style="margin-left: 5%;"></span>

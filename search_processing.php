@@ -11,6 +11,7 @@ $res = mysqli_query($connection,"SELECT * FROM loops where town LIKE '$search'")
 
 $numOfMaps = 0;
 while ($row = mysqli_fetch_assoc($res)) {
+    //Pushes the loop info into a temp array
     $numOfMaps++;
     array_push($temp, $row["map"]);
     array_push($temp, $row["distance"]);
@@ -21,6 +22,7 @@ while ($row = mysqli_fetch_assoc($res)) {
 }
 array_push($data, $numOfMaps);
 
+//Sends a JSON file with an array of Loops. Each loop has it's important information. Also has the number of loops being sent
 header('Content-type: application/json');
 echo json_encode( $data );
 

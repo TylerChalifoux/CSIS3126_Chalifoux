@@ -16,24 +16,24 @@ $(document).ready(function(){
         $('#passMatchErrorMessage').css("color", "black");
         var goodPasswordandUsername = true;
 
-       //checks if username is less than 5 charcters, turns the error message text red if false
+       //checks if username is less than 5 characters, turns the error message text red if false
         if(username.length<5){
             $('#usernameErrorMessage').css("color", "red");
             goodPasswordandUsername = false;
         }
         
-        //checks if the top and bottom password are less than 7 charcters, turns the error message text red if false
+        //checks if the top and bottom password are less than 7 characters, turns the error message text red if false
         if(topPassword.length<5 || bottomPassword.length<5){
             $('#passCharErrorMessage').css("color", "red");
             goodPasswordandUsername = false;
         }
-        //checks if the top and bottom password dont match, turns the error message text red if false
+        //checks if the top and bottom password don't match, turns the error message text red if false
         if(topPassword != bottomPassword){
             $('#passMatchErrorMessage').css("color", "red");
             goodPasswordandUsername = false;
         }
         
-        //ONCE THE PASSWORD HAS BEEN VERIFIED TO BE GOOD
+        //ONCE THE PASSWORD HAS BEEN VERIFIED TO BE GOOD, submit the form
         if(goodPasswordandUsername){
             $('#newAccountForm').submit();
         }

@@ -1,9 +1,46 @@
------------------FIND A LOOP web app------------------
+-----------------FIND A LOOP web app-------------------
 
-CURRENT BUILD INFORMATION (Updated 12/7)----------------------------------
+CURRENT BUILD INFORMATION (Updated 12/12)----------------------------------
 - Online URL is: https://tchalifoux.jwuclasses.com/
 
-------------------Created webpages and what they do----------------
+------------------Re-creating the app---------------------------------------
+1) Hosting:
+	- Almost all pages are PHP which require hosting to run properly. Any hosting
+	platform would work for the project and the hosting service does not impact
+	the project
+
+2) Databse: 
+	- The project uses an SQL database for the storage of it's users and loops. How
+	to recreate this databse can be found the file titled "findALoopSQL" posted on
+	GitHub.
+	- If a new host for the database were to be used, only the variable "$connection" found in the
+	global file would need to be changed. This variable stores the host, username, password, 
+	and database name. If a new host were used, the host, username, and password would need to
+	change but the database name can remain the same as the SQL file uses that name. Once this
+	variable is upadated and the SQL is created, the project will work normally again.
+
+3) API's:
+	- The Google API was used extensivly during this project. This is the API used to make the map and use
+	the coordinates.
+	- Each of the Google API's require a slightly different URL to post to but the key is all the same for the account
+	- My current Google API key will not be shown in this file but can be found in the code as documented below
+	- Only two different API's were used throughout the project:
+		-Static Map - for creating a map with lines in it from a string of coordinates
+			-URL: https://maps.googleapis.com/maps/api/staticmap
+		-Geocode - for taking in coordinates and telling you the town and state
+			-URL: https://maps.googleapis.com/maps/api/geocode/json?
+	-The URL's for these remain unchanged no matter the key. Each function using the API has variables seperating the 
+	URL from the key to easily allow a key to be changed. 
+	-If a different key were to be used, all of the functions using the API would need there key changed. The function to create
+	a map is always called "showMap" and only the key variable in that function would need to change. This function can be found in
+	the all of the following files. The geocode API was used only once and is in the "mobile.js" file
+		-Index.js
+		-map_info.js
+		-mobile.js
+		-profile_page.js
+		-search_page.js
+
+------------------Created webpages and what they do------------------------
 
 1) Index page:
 	-Slide show showing stock images
@@ -27,31 +64,34 @@ CURRENT BUILD INFORMATION (Updated 12/7)----------------------------------
 	-Design is done for mobile and desktop
 	
 4) Home page:
-	-Shows nearby loops
+	-Shows nearby loops (Clicking a loop brings user to more info)
 	-Allows for users to search for loops (brings to search page)
-	-Current design works for both desktop and mobile
+	-Design is done for mobile and desktop
 	-Has two buttons, one for the users profile and one for the stopwatch
 
 5) Search page:
-	-Shows loops in the town the user entered	
+	-Shows loops in the town the user entered (Clicking a loop brings user to more info)
+	-Design is done for mobile and desktop
 
 6) Stopwatch page:
 	-Works as a normal stopwatch
-	-Logs users location data correctly
+	-Logs users location data every 5 seconds
 	-Has the tribute to my late dog (sadie(the goodest girl))  :(
 	-Designs looks good for mobile and gives an alert for desktop users
 
 7) Profile page:
 	-Displays all routes that user has liked
 	-Allows the user to log out
+	-Design is done for mobile and desktop
 
 8) More loop info:
 	-Shows a larger picture of the loop
 	-Shows text about the loop
 	-Allows the user to like a loop
+	-Design is done for mobile and desktop
 
 
-------------------Other files and there purpose----------------
+------------------Other files and there purpose----------------------------------
 
 1) verifyLoggedIn:
 	-When included on the top of a file, will redirect users not logged in to the index page

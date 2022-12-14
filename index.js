@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    //-------Everything below is for the slideshow on the front page----------
+    //Everything below is for the slideshow on the front page
     let slideIndex = 0;
     showSlides();
 

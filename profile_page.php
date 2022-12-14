@@ -11,6 +11,7 @@ include("verifyLoggedIn.php");
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="profile_page.js"></script>
         
+        <!--Styling for desktop and mobile-->
         <style>
             @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
                 .map{
@@ -72,6 +73,7 @@ include("verifyLoggedIn.php");
     </head>
 
     <body>
+        <!--Top margin-->
         <div><a href = index.php><img id = logo src = "Icons/Logo.png"></a></div>
             <div id = topMargin>Find a Loop</div>
         <div>
@@ -80,11 +82,13 @@ include("verifyLoggedIn.php");
             <button id = signOutButton class = buttonStyling style = "margin-right: 5vw; float:right; padding: 1em; color: yellow;" type="button">Sign Out</button>
         </p>
         </div>
+        <!--Only shown if nothing is saved-->
         <div id = noResults style = "text-align:center; font-size: 3.5vmin; display:none">
             <p  id = noResultsText>Looks like you don't have any saved loops. Let's find or make some!</p>
             <img id = noResultsImage src = "Icons/noSavedLoopsImage.jpg" style = "width: 50vw; heigh: 40vh"><br>
         </div>
 
+        <!--Shows all the users loops-->
         <div style = "margin-top: 3vh; margin-bottom: 30vh;">
             <div class = mapTextCombo>
                 <a id = mapURL0><img id = localMap0 class = map><br></a>

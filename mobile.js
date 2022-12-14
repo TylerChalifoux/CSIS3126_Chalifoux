@@ -34,21 +34,21 @@ $(document).ready(function(){
         xhttp.send();
     }
     
-    //This hideous function is from Google Maps API. This allows you to find the distance between two long and lat points on the globe
+    //This hideous function is from Google Maps API. This allows you to find the distance between two long and lat points on the globe in miles
     function getDistanceFromLatLonInMi(lat1, lon1, lat2, lon2) {
-        var R = 6371; // Radius of the earth in km
-        var dLat = deg2rad(lat2-lat1);  // deg2rad below
+        var R = 6371; 
+        var dLat = deg2rad(lat2-lat1);  
         var dLon = deg2rad(lon2-lon1); 
         var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon/2) * Math.sin(dLon/2); 
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-        var d = R * c; // Distance in km
-        return (d/1.609); // returns miles
+        var d = R * c; 
+        return (d/1.609);
       }
       function deg2rad(deg) {
         return deg * (Math.PI/180)
       }
     
-     //This portion are the coordinates for the red line on the map and to center the map correctly
+     //This portion are the coordinates for the red line on the map
      const runPath = [];
      numOfCoords = 0;
      totalDistance = 0;
@@ -56,9 +56,12 @@ $(document).ready(function(){
      var state = "";
 
     //This function is for the display of the timer
+    //The way this works is that the timer only keeps track of the milliseconds. Went he milliseconds hits 1000, the seconds are increased
+    //and the timer is actually fully reset back to 0 but the seconds are up by one. This continues to make the appearance that it is
+    //keeping track of the users time
     killed = false;
     timerInfo = function(){
-        //Killed is true if the timer is stopped
+        //Killed is true if the timer is stopped. If killed is true, the whole function does not run
         if(!killed){
             //Sets the timer equal the difference in between the start and now
             currentMil = Date.now() - startTime;
@@ -68,6 +71,7 @@ $(document).ready(function(){
                 currentMil = 0;
                 currentSec++;
             }else{
+                //Sets the milliseconds spot on the timer equal to the number of milliseconds
                 //Adds one or two zeros into the display of the milliseconds to prevent text from moving
                 if(currentMil<10){
                     $('#mil').text('00');
@@ -85,6 +89,7 @@ $(document).ready(function(){
                 currentSec = 0;
                 currentMin++;
             }else{
+                //Sets the seconds spot on the timer equal to the number of seconds
                 //adds a 0 if seconds are below 10. This prevents the text from moving when going from 9 to 10
                 if(currentSec<10){
                     $('#sec').text('0' + currentSec);
@@ -100,6 +105,7 @@ $(document).ready(function(){
                 currentSec = 0;
                 currentMin = 0;
             }else{
+                //Sets the minutes spot on the timer equal to the number of minutes
                 //adds a 0 if minutes are below 10. This prevents the text from moving when going from 9 to 10
                 if(currentMin<10){
                     $('#min').text('0' + currentMin);
@@ -122,12 +128,11 @@ $(document).ready(function(){
         $('#timerBox').css("background-color","green");
         $('#finishButton').css("display","none");
 
-        //This function runs at a specified rate. We have set for once every millisecond
+        //This function runs at a specified rate. Runs the timer function every millisecond
         setInterval(function() {
-            //Runs the above function
             timerInfo();
         }, 1);
-            //While running the above every millisecond, it also runs the below function every 5 seconds
+            //While running the above every millisecond, it also runs the below function every 5 seconds to get the location
             setInterval(function() {
             if(!killed){
                 //as long as timer is running, log location
@@ -219,13 +224,14 @@ $(document).ready(function(){
         currentSec = 0;
         currentMil = 0;
         currentMin = 0;
+        //Clears the timer
         startTime = Date.now();
         killed = false;
         timerInfo();
         killed = true;
 
 
-        //creates the new map and puts it into the div with that ID
+        //Creates the new map and puts it into the div with that ID
         showMap("googleMap", coordsToString(runPath));
         $('#timerBox').css("display","none");
 

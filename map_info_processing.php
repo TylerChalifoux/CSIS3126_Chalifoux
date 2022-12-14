@@ -23,7 +23,7 @@ $res = mysqli_query($connection,"SELECT * FROM users where id = '$currentId'");
 $row = mysqli_fetch_assoc($res);
 $usersLoops = $row['savedLoops'];
 
-//Loops through the library and adds into the JSON file whether or not the user has the map already saved. Used to auto check the box if the user has the loop saved
+//Loops through the library of saved loops and adds into the JSON file whether or not the user has the map already saved. Used to auto check the box if the user has the loop saved
 $loops= explode(',',$usersLoops);
 $counter = 0;
 foreach ($loops as $value) {
@@ -36,7 +36,7 @@ foreach ($loops as $value) {
     $counter = $counter +1;
 }
 
-//Sends the JSON file
+//Sends the JSON file with all the information on the loop and whether this loop has been saved or not
 header('Content-type: application/json');
 echo json_encode( $data );
 ?>

@@ -108,6 +108,7 @@ include("global.php");
             <p style = "margin-bottom: 0.5em;"class = loopDetailsList>Pace: <span id = finalPacetext style="font-size: 0.6em;"></span></p>
 
         </div>
+        <!--Buttons at end of loop to erase or save. Only shown at end-->
         <button id = logButton class = buttonStyling style = "padding: 0.7em; color: yellow; margin-left: 2em; display: none;" type="button">Log Loop</button>
         <button id = restartButton class = buttonStyling style = "padding: 0.7em; color: yellow; display: none;" type="button">Restart Loop</button>
     </body>
